@@ -7420,7 +7420,8 @@ MonoBehaviour:
   calendar: {fileID: 401072171}
   initialhr: 11
   initialmin: 37
-  daylight: {fileID: 1746665700}
+  daylight: {fileID: 1746665699}
+  lightValue: {fileID: 1746665700}
   taskhr: 0
   taskmin: 0
   tasksecond: 0
