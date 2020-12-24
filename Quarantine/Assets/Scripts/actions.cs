@@ -17,7 +17,8 @@ public class actions : MonoBehaviour
     public player onBedStatus;
     public GameObject phoneScreen;
     public GameObject wechatOn, wechatOff, discordOn, discordOff, plannerOn, plannerOff;
-    public bool wechatting,discording,planner; 
+    public bool wechatting,discording,planner;
+    public GameObject timeManager;
     void start()
     {
      

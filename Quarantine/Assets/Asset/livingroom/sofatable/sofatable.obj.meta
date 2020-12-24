@@ -3,7 +3,12 @@ guid: 571c395ba66520f40be6eb734663720f
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: initialShadingGroup
+    second: {fileID: 2100000, guid: 2ba5a6af2ad7eea4e805e18dbc794fec, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
