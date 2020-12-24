@@ -28,10 +28,10 @@ public class raycasting : MonoBehaviour
         if (Physics.Raycast(this.transform.position, this.transform.forward, out whatIHit, distanceToSee))
         {
             
-            Debug.Log("the tag is " + whatIHit.collider.gameObject.tag);
+            //Debug.Log("the tag is " + whatIHit.collider.gameObject.tag);
             if (whatIHit.collider.gameObject.tag == "Interactable")
             {
-                Debug.Log("raycasting" +whatIHit.collider.gameObject.name);
+                //Debug.Log("raycasting" +whatIHit.collider.gameObject.name);
                 InteractText = whatIHit.collider.gameObject.name;
 
                 objectName = uiObject.GetComponent<Text>().text.ToString();

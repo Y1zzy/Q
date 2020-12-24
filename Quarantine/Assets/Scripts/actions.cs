@@ -39,10 +39,11 @@ public class actions : MonoBehaviour
                 openTheDoor();
             }  
         }
-        if (whatISee == "door2")
+        if (whatISee == "bdoor")
         {
             if (Input.GetKeyDown(KeyCode.E))
-            { 
+            {
+                
                 open2Door();
             }
         }
