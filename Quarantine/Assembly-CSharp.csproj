@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\actions.cs" />
     <Compile Include="Assets\Scripts\day1Progress.cs" />
     <Compile Include="Assets\Scripts\dooropen.cs" />
+    <Compile Include="Assets\Scripts\lightswitch.cs" />
     <Compile Include="Assets\Scripts\mirror.cs" />
     <Compile Include="Assets\Scripts\raycasting.cs" />
     <Compile Include="Assets\Scripts\scriptthatworks\look.cs" />

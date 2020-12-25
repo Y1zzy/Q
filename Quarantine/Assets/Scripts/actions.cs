@@ -19,6 +19,8 @@ public class actions : MonoBehaviour
     public GameObject wechatOn, wechatOff, discordOn, discordOff, plannerOn, plannerOff;
     public bool wechatting,discording,planner;
     public GameObject timeManager;
+    public lightswitch bedroomLight;
+    public bool bedroomSwitchOn;
     void start()
     {
      
@@ -26,12 +28,14 @@ public class actions : MonoBehaviour
         wechatting = false;
         discording = false;
         planner = false;
+        //bedroomSwitchOn = bedroomLight.GetComponent<lightswitch>().GetComponent("isOn");
     }
 
     
     void Update()
     {
-        whatISee = raycastobj.InteractText; //access the object info from raycasting
+        whatISee = raycastobj.InteractText; //access the object info from raycasting\
+        
        // Debug.Log(whatISee);
         if (whatISee == "door")
         {
@@ -44,7 +48,6 @@ public class actions : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                
                 open2Door();
             }
         }
@@ -55,6 +58,24 @@ public class actions : MonoBehaviour
             {
                 laptoptask();
             }
+        }
+
+        if (whatISee == "bedroomswitch")
+        {
+            Debug.Log(bedroomLight.isOn);
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                if (bedroomLight.isOn == true)
+                { 
+                    bedroomLight.isOn = false;
+                }
+                else
+                {
+                    bedroomLight.isOn = true;
+                }
+            }
+
+            
         }
         
 
@@ -141,12 +162,13 @@ public class actions : MonoBehaviour
             door2IsOpen = true;
         }
     }
+
     void goToBed()
     {
         if (onBed == false)
         {
             transform.position = new Vector3(-10, 7.42f, -4);
-            //transform.rotation = new Quaternion(45,0,0,0);
+            transform.localEulerAngles = new Vector3(45,0,0);
             onBed = true;
         }
         else

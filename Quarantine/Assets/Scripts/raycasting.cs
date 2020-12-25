@@ -10,7 +10,7 @@ public class raycasting : MonoBehaviour
     public GameObject uiObject;
     public string InteractText;
     public string objectName;
-    //private string objTag;
+    
     // Start is called before the first frame update
     void Start()
     {
