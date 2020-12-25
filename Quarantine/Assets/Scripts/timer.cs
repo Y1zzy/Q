@@ -13,14 +13,15 @@ public class timer : MonoBehaviour
     public int initialhr = 11, initialmin = 37;
     public GameObject daylight;
     public Light lightValue;
+    public float angle;
     public int taskhr, taskmin, tasksecond;
     
     // Start is called before the first frame update
     void Start()
     {
         //startTime = Time.time;
-        lightValue = GetComponent<Light>();
-        
+        lightValue = daylight.GetComponent<Light>();
+        //angle = daylight.transform.rotation.eulerAngles.x;
     }
 
     // Update is called once per frame
@@ -34,6 +35,53 @@ public class timer : MonoBehaviour
         timeText.text = string.Format("{0:0}:{1:00}:{2:00}",hour,minute,second);
         
         calendar.text = "Mar.9th 2020";
+        sunlight();
+    }
+
+    void sunlight()
+    {
+        if (minute >= 37 && minute < 39)
+        {
+            
+            daylight.transform.localEulerAngles = new Vector3(20.0f, -218.96f, -156.342f);
+            lightValue.intensity = 1.4f;
+        }
+        if (minute >= 39 && minute < 41)
+        {
+            
+            daylight.transform.localEulerAngles = new Vector3(17.0f, -218.96f, -156.342f);
+            lightValue.intensity = 1.2f;
+        }
+        if (minute >= 41 && minute < 43)
+        {
+            
+            daylight.transform.localEulerAngles = new Vector3(14.0f, -218.96f, -156.342f);
+            lightValue.intensity = 1.0f;
+        }
+        if (minute >= 43 && minute < 46)
+        {
+            
+            daylight.transform.localEulerAngles = new Vector3(11.0f, -218.96f, -156.342f);
+            lightValue.intensity = 0.8f;
+        }
+        if (minute >= 46 && minute < 47)
+        {
+            
+            daylight.transform.localEulerAngles = new Vector3(8.0f, -218.96f, -156.342f);
+            lightValue.intensity = 0.6f;
+        }
+        if (minute >= 47 && minute < 48)
+        {
+            
+            daylight.transform.localEulerAngles = new Vector3(5.0f, -218.96f, -156.342f);
+            lightValue.intensity = 0.4f;
+        }
+        if (minute >= 48 && minute < 50)
+        {
+            
+            daylight.transform.localEulerAngles = new Vector3(0f, -218.96f, -156.342f);
+            lightValue.intensity = 0.0f;
+        }
 
     }
 }
