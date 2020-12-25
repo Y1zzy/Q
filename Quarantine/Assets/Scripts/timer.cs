@@ -20,6 +20,8 @@ public class timer : MonoBehaviour
     void Start()
     {
         //startTime = Time.time;
+        initialhr = 15;
+        initialmin = 46;
         lightValue = daylight.GetComponent<Light>();
         //angle = daylight.transform.rotation.eulerAngles.x;
     }
