@@ -20,7 +20,9 @@ public class actions : MonoBehaviour
     public bool wechatting,discording,planner;
     public GameObject timeManager;
     public lightswitch bedroomLight;
+    public lightswitch bathroomLight;
     public bool bedroomSwitchOn;
+    public bool bathroomSwitchOn;
     void start()
     {
      
@@ -73,11 +75,24 @@ public class actions : MonoBehaviour
                 {
                     bedroomLight.isOn = true;
                 }
-            }
-
-            
+            }   
         }
-        
+        if (whatISee == "bathroomswitch")
+        {
+            
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                if (bathroomLight.isOn == true)
+                {
+                    bathroomLight.isOn = false;
+                }
+                else
+                {
+                    bathroomLight.isOn = true;
+                }
+            }
+        }
+
 
         if (whatISee == "bed")
         {
