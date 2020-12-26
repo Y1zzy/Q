@@ -10,6 +10,8 @@ public class lightswitch : MonoBehaviour
     public GameObject light4;
     public GameObject light5;
     public GameObject light6;
+    public GameObject light7;
+    public GameObject light8;
     public bool isOn;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,8 @@ public class lightswitch : MonoBehaviour
             light4.SetActive(false);
             light5.SetActive(false);
             light6.SetActive(false);
+            light7.SetActive(false);
+            light8.SetActive(false);
         }
         if (isOn == true)
         {
@@ -37,6 +41,8 @@ public class lightswitch : MonoBehaviour
             light4.SetActive(true);
             light5.SetActive(true);
             light6.SetActive(true);
+            light7.SetActive(true);
+            light8.SetActive(true);
         }
     }
 }

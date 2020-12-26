@@ -21,8 +21,10 @@ public class actions : MonoBehaviour
     public GameObject timeManager;
     public lightswitch bedroomLight;
     public lightswitch bathroomLight;
+    public lightswitch livingroomLight;
     public bool bedroomSwitchOn;
     public bool bathroomSwitchOn;
+    public bool livingroomSwitchOn;
     void start()
     {
      
@@ -76,6 +78,22 @@ public class actions : MonoBehaviour
                     bedroomLight.isOn = true;
                 }
             }   
+        }
+
+        if (whatISee == "livingroomswitch")
+        {
+            //Debug.Log(bedroomLight.isOn);
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                if (livingroomLight.isOn == true)
+                {
+                    livingroomLight.isOn = false;
+                }
+                else
+                {
+                    livingroomLight.isOn = true;
+                }
+            }
         }
         if (whatISee == "bathroomswitch")
         {
