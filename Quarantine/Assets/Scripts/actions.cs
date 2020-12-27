@@ -22,9 +22,11 @@ public class actions : MonoBehaviour
     public lightswitch bedroomLight;
     public lightswitch bathroomLight;
     public lightswitch livingroomLight;
+    public lightswitch kitchenLight;
     public bool bedroomSwitchOn;
     public bool bathroomSwitchOn;
     public bool livingroomSwitchOn;
+    public bool kitchenSwitchOn;
     void start()
     {
      
@@ -82,7 +84,6 @@ public class actions : MonoBehaviour
 
         if (whatISee == "livingroomswitch")
         {
-            //Debug.Log(bedroomLight.isOn);
             if (Input.GetKeyDown(KeyCode.T))
             {
                 if (livingroomLight.isOn == true)
@@ -107,6 +108,21 @@ public class actions : MonoBehaviour
                 else
                 {
                     bathroomLight.isOn = true;
+                }
+            }
+        }
+        if (whatISee == "kitchenswitch")
+        {
+           
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                if (kitchenLight.isOn == true)
+                {
+                    kitchenLight.isOn = false;
+                }
+                else
+                {
+                    kitchenLight.isOn = true;
                 }
             }
         }
