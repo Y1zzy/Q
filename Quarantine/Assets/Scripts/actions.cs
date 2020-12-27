@@ -19,14 +19,8 @@ public class actions : MonoBehaviour
     public GameObject wechatOn, wechatOff, discordOn, discordOff, plannerOn, plannerOff;
     public bool wechatting,discording,planner;
     public GameObject timeManager;
-    public lightswitch bedroomLight;
-    public lightswitch bathroomLight;
-    public lightswitch livingroomLight;
-    public lightswitch kitchenLight;
-    public bool bedroomSwitchOn;
-    public bool bathroomSwitchOn;
-    public bool livingroomSwitchOn;
-    public bool kitchenSwitchOn;
+    public lightswitch bedroomLight, bathroomLight, livingroomLight, kitchenLight;
+    public bool bedroomSwitchOn, bathroomSwitchOn, livingroomSwitchOn, kitchenSwitchOn;
     void start()
     {
      
@@ -34,7 +28,6 @@ public class actions : MonoBehaviour
         wechatting = false;
         discording = false;
         planner = false;
-        //bedroomSwitchOn = bedroomLight.GetComponent<lightswitch>().GetComponent("isOn");
     }
 
     
@@ -146,7 +139,7 @@ public class actions : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))//this condition opens up the wechat panel
+        /*if (Input.GetKeyDown(KeyCode.Alpha1))//this condition opens up the wechat panel
         {
             discordOn.SetActive(false);
             discordOff.SetActive(true);
@@ -178,7 +171,7 @@ public class actions : MonoBehaviour
             discordOff.SetActive(true);
             discording = false;
             openplanner();
-        }
+        }*/
     }
 
     void openTheDoor() // this function is to open the bathroom door
