@@ -39,8 +39,8 @@ public class raycasting : MonoBehaviour
 
                 objectName = InteractText;
 
-                uiObject.GetComponent<Text>().text = objectName;
-                uiObject.SetActive(true);
+                //uiObject.GetComponent<Text>().text = objectName;
+                //uiObject.SetActive(true);
                 StartCoroutine("WaitForSec");
             }
         }

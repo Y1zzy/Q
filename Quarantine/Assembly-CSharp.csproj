@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\device.cs" />
     <Compile Include="Assets\Scripts\dooropen.cs" />
     <Compile Include="Assets\Scripts\laptop.cs" />
+    <Compile Include="Assets\Scripts\laptopsoftware.cs" />
     <Compile Include="Assets\Scripts\lightswitch.cs" />
     <Compile Include="Assets\Scripts\mirror.cs" />
     <Compile Include="Assets\Scripts\raycasting.cs" />

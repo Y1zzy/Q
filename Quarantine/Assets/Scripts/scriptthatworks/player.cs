@@ -8,8 +8,8 @@ public class player : MonoBehaviour
     
     [SerializeField] private string horizontalInputName, verticalInputName;
     [SerializeField] private float movementSpeed;
-    public actions movement;
-    public bool isOnBed;
+    //public actions movement;
+    public bool stop;
     private CharacterController charController;
 
 
@@ -25,10 +25,9 @@ public class player : MonoBehaviour
     {
 
         //isOnBed = movement.onBed;
-        if (isOnBed == false)
-        {
-            PlayerMovement();
-        }
+        
+        PlayerMovement();
+ 
         
     }
 
@@ -42,7 +41,7 @@ public class player : MonoBehaviour
         Vector3 rightMovement = transform.right * horizInput;
 
         charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
-        //Debug.Log("?" + isOnBed);
+        
     }
     
 

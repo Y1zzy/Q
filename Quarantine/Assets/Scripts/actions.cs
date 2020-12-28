@@ -9,7 +9,7 @@ public class actions : MonoBehaviour
     public Animator doorAnim, bedroomDoorAnim;
     public raycasting raycastobj;
     private bool doorIsOpen, door2IsOpen;
-    public bool onBed;
+    //public bool onBed;
     private string interactableObj;
     public GameObject laptopScene;
     public player onBedStatus;
@@ -22,10 +22,7 @@ public class actions : MonoBehaviour
     public bool bedroomSwitchOn, bathroomSwitchOn, livingroomSwitchOn, kitchenSwitchOn;
     void start()
     {
-        onBed = false;
-        wechatting = false;
-        discording = false;
-        planner = false;
+        //onBed = false;
     }
 
     
@@ -121,9 +118,6 @@ public class actions : MonoBehaviour
             }
         }
 
-        
-
-
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             if (chat.chatIsOn == true)
@@ -142,16 +136,16 @@ public class actions : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                onBedStatus.isOnBed = true;
+                onBedStatus.stop = true;
                 goToBed();
             }
         }
 
-        if (onBed) //this condition decides if the player will get on the bed or get off the bed
+        if (onBedStatus.stop ==true) //this condition decides if the player will get on the bed or get off the bed
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                onBedStatus.isOnBed = false;
+                onBedStatus.stop = false;
                 goToBed();
             }
         }
@@ -192,16 +186,16 @@ public class actions : MonoBehaviour
 
     void goToBed()
     {
-        if (onBed == false)
+        if (onBedStatus.stop == false)
         {
             transform.position = new Vector3(-10, 7.42f, -4);
-            transform.localEulerAngles = new Vector3(45,0,0);
-            onBed = true;
+            transform.localEulerAngles = new Vector3(70,0,0);
+            onBedStatus.stop = true;
         }
         else
         {
             transform.position = new Vector3(-5, 7.42f, -4);
-            onBed = false;
+            onBedStatus.stop = false;
         }
     }
 
