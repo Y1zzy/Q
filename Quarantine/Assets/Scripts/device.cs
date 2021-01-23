@@ -6,6 +6,7 @@ public class device : MonoBehaviour
 {
     public GameObject chatOn;
     public GameObject chatOff;
+    public GameObject message;
     public bool chatIsOn;
     // Start is called before the first frame update
     void Start()
@@ -20,13 +21,13 @@ public class device : MonoBehaviour
         {
             chatOff.SetActive(true);
             chatOn.SetActive(false);
-            
+            message.SetActive(false);
         }
         if (chatIsOn == true)
         {
             chatOff.SetActive(false);
             chatOn.SetActive(true);
-           
+            message.SetActive(true);
         }
     }
 }

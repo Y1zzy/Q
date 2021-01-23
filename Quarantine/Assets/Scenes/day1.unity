@@ -3057,6 +3057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatOn: {fileID: 245869846}
   chatOff: {fileID: 398963289}
+  message: {fileID: 153820838}
   chatIsOn: 0
 --- !u!1001 &466520221
 PrefabInstance:
@@ -3209,6 +3210,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d8b5c3337ea1b554fabc8f65f9bcaf31, type: 2}
+    - target: {fileID: -1686918260590376551, guid: 1c13090707c2f054a9a75ea21e20dcdb,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 1c13090707c2f054a9a75ea21e20dcdb,
         type: 3}
       propertyPath: m_Name
@@ -6012,34 +6018,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1558542272}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &854393705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 854393704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4aa3bfd681ba544a8eff3a8683ce81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  month: 
-  date: 
-  year: 
-  hour: 0
-  minute: 0
-  second: 0
-  timeText: {fileID: 242161830}
-  calendar: {fileID: 401072171}
-  initialhr: 11
-  initialmin: 37
-  daylight: {fileID: 1746665699}
-  lightValue: {fileID: 1746665700}
-  angle: 0
-  taskhr: 0
-  taskmin: 0
-  tasksecond: 0
 --- !u!114 &854393706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6243,6 +6221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 894966372}
+  - component: {fileID: 894966373}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -6269,6 +6248,18 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000023070723, y: -0.0000016035933}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &894966373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894966371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 637c4c0ddbb6fcf4d885d0562eb482e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &896203426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9678,6 +9669,50 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6692290496178104961, guid: 17e428a7d9608c64a9aa81be867d0545, type: 3}
+--- !u!1 &1642346795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1642346796}
+  - component: {fileID: 1642346797}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1642346796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642346795}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.8724527, y: 3.9123306, z: -4.163871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 73
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1642346797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642346795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45dd3355ddce31245be3ca0b6c09c2dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeManager: {fileID: 1784519422}
 --- !u!1001 &1646907094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10655,7 +10690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -10810,6 +10845,65 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1784519420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1784519421}
+  - component: {fileID: 1784519422}
+  m_Layer: 0
+  m_Name: TimeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1784519421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784519420}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.8724527, y: 3.9123306, z: -4.163871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 74
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1784519422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784519420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4aa3bfd681ba544a8eff3a8683ce81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  month: 
+  date: 
+  year: 
+  hour: 0
+  minute: 0
+  second: 0
+  timeText: {fileID: 242161830}
+  calendar: {fileID: 401072171}
+  initialhr: 11
+  initialmin: 37
+  daylight: {fileID: 1746665699}
+  lightValue: {fileID: 1746665700}
+  angle: 0
+  taskhr: 0
+  taskmin: 0
+  tasksecond: 0
 --- !u!1 &1825965614
 GameObject:
   m_ObjectHideFlags: 0
@@ -11004,7 +11098,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e7578d8e5694d744384c44e2c44d2f6b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e7578d8e5694d744384c44e2c44d2f6b,
         type: 3}

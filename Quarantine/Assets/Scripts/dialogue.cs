@@ -7,15 +7,13 @@ using UnityEngine.UI;
 public class dialogue : MonoBehaviour
 {
 
-    public GameObject chatPanel, textObject;
-
-    [SerializeField]
-    List<Message> messageList = new List<Message>();
+    //public GameObject chatPanel, textObject;
+    public Queue<string> sentences;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        sentences = new Queue<string>();
     }
 
     // Update is called once per frame
@@ -23,18 +21,17 @@ public class dialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+           
             Debug.Log("pressed");
         }
     }
 
-    public void chat()
-        {
-        }
+  
 }
 [System.Serializable]
 public class Message
 {
-    public string text;
-    public Text textobject;
+    public string[] sentences;
+    //public Text textobject;
 }
 
