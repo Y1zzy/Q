@@ -22,7 +22,7 @@ public class actions : MonoBehaviour
     public bool bedroomSwitchOn, bathroomSwitchOn, livingroomSwitchOn, kitchenSwitchOn;
     void start()
     {
-        //onBed = false;
+        
     }
 
     
@@ -30,7 +30,7 @@ public class actions : MonoBehaviour
     {
         whatISee = raycastobj.InteractText; //access the object info from raycasting
         
-       // Debug.Log(whatISee);
+        Debug.Log(whatISee);
         if (whatISee == "door")
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -49,6 +49,7 @@ public class actions : MonoBehaviour
                 if (laptop.laptopOpen == false)
                 {
                     laptop.laptopOpen = true;
+                    
                 }
             }
             if (laptop.laptopOpen == true && Input.GetKeyDown(KeyCode.Escape))
