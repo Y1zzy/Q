@@ -7,11 +7,13 @@ public class actions : MonoBehaviour
 {
     public string whatISee;
     public Animator doorAnim, bedroomDoorAnim;
-    public raycasting raycastobj;
-    private bool doorIsOpen, door2IsOpen;
-    //public bool onBed;
-    private string interactableObj;
+
+    //[HideInInspector]
+    //public raycasting raycastobj;
     public GameObject laptopScene;
+    //public bool onBed;
+
+
     public player onBedStatus;
     public GameObject phoneScreen;
     public device chat;
@@ -20,17 +22,20 @@ public class actions : MonoBehaviour
     public laptop laptop;
     public lightswitch bedroomLight, bathroomLight, livingroomLight, kitchenLight;
     public bool bedroomSwitchOn, bathroomSwitchOn, livingroomSwitchOn, kitchenSwitchOn;
+
+    private bool doorIsOpen, door2IsOpen;
+    private string interactableObj;
     void start()
     {
-        
+        //raycastobj = this.GetComponent<raycasting>();
     }
 
     
     void Update()
     {
-        whatISee = raycastobj.InteractText; //access the object info from raycasting
+        //whatISee = raycastobj.InteractText; //access the object info from raycasting
         
-        Debug.Log(whatISee);
+        //Debug.Log(whatISee);
         if (whatISee == "door")
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -52,7 +57,7 @@ public class actions : MonoBehaviour
                     
                 }
             }
-            if (laptop.laptopOpen == true && Input.GetKeyDown(KeyCode.Escape))
+            if (laptop.laptopOpen == true && Input.GetKeyDown(KeyCode.R))
             {
                 laptop.laptopOpen = false;
             }
@@ -130,7 +135,9 @@ public class actions : MonoBehaviour
                 chat.chatIsOn = true;
             }
         }
+
         
+
 
 
         if (whatISee == "bed")

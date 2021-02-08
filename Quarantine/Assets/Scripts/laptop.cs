@@ -17,10 +17,14 @@ public class laptop : MonoBehaviour
     {
         if (laptopOpen == false)
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             screen.SetActive(false);
         }
         if (laptopOpen == true)
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             screen.SetActive(true);
         }
     }
