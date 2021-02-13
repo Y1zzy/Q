@@ -27,8 +27,9 @@ public class player : MonoBehaviour
         //isOnBed = movement.onBed;
         
         PlayerMovement();
- 
+
         
+
     }
 
     void PlayerMovement()
