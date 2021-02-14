@@ -6,7 +6,6 @@ public class laptop : MonoBehaviour
 {
     public GameObject screen;
     public bool laptopOpen;
-    public timer totalTime;
     // Start is called before the first frame update
     void Start()
     {
