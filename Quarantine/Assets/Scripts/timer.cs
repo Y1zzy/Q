@@ -14,17 +14,19 @@ public class timer : MonoBehaviour
     public GameObject daylight;
     public Light lightValue;
     public float angle;
-    public int taskhr, taskmin, tasksecond;
+    public int hoursworked;
+    
+    //public int taskhr, taskmin, tasksecond;
     
     
     // Start is called before the first frame update
     void Start()
     {
         //startTime = Time.time;
-        initialhr = 15;
-        initialmin = 46;
+        initialhr = 11;
+        initialmin = 37;
         lightValue = daylight.GetComponent<Light>();
-        //angle = daylight.transform.rotation.eulerAngles.x;
+       
     }
 
     // Update is called once per frame
@@ -43,7 +45,8 @@ public class timer : MonoBehaviour
 
     void sunlight()
     {
-        if (minute >= 37 && minute < 39)
+        
+        /*if (minute >= 37 && minute < 39)
         {
             
             daylight.transform.localEulerAngles = new Vector3(20.0f, -218.96f, -156.342f);
@@ -84,7 +87,7 @@ public class timer : MonoBehaviour
             
             daylight.transform.localEulerAngles = new Vector3(0f, -218.96f, -156.342f);
             lightValue.intensity = 0.0f;
-        }
+        }*/
 
     }
 }

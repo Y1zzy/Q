@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\dialogue.cs" />
     <Compile Include="Assets\Scripts\dialoguesentences.cs" />
     <Compile Include="Assets\Scripts\dooropen.cs" />
+    <Compile Include="Assets\Scripts\fade.cs" />
     <Compile Include="Assets\Scripts\laptop.cs" />
     <Compile Include="Assets\Scripts\laptopsoftware.cs" />
     <Compile Include="Assets\Scripts\lightswitch.cs" />

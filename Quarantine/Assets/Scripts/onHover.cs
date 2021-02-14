@@ -11,9 +11,11 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
     public timer Time;
     public Animator fadeanimation;
     public laptop screen;
+    //private int hoursofworking;
     //public Text accomplished;
-    private string done;
+    //private string done;
     public string accomplishedtext;
+    public fade fading;
     //string done;
     // Start is called before the first frame update
     void Start()
@@ -21,9 +23,7 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
         logoText.SetActive(false);
         
         
-        //done = accomplished.GetComponent<Text>().text.ToString();
-        //done = accomplishedtext;
-        //accomplishedtext = done.text.ToString();
+      
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -35,11 +35,12 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("sup");
+        
         Time.initialhr += customizedHour;
+        Time.hoursworked += customizedHour;
         screen.laptopOpen = false;
-        //accomplished.SetActive(true);
-        //fadeanimation.SetTrigger("Fadeout");
+        Debug.Log(Time.initialhr + " and " + Time.hoursworked + "workable");
+
     }
 
     public void OnPointerExit (PointerEventData eventData)

@@ -22,11 +22,14 @@ public class actions : MonoBehaviour
     public laptop laptop;
     public lightswitch bedroomLight, bathroomLight, livingroomLight, kitchenLight;
     public bool bedroomSwitchOn, bathroomSwitchOn, livingroomSwitchOn, kitchenSwitchOn;
-
+    public GameObject innerworld;
+    string innerworldtext;
     private bool doorIsOpen, door2IsOpen;
     private string interactableObj;
     void start()
     {
+        innerworld.SetActive(false);
+        //innerworldtext = innerworld.GetComponent<Text>.text.ToString();
         //raycastobj = this.GetComponent<raycasting>();
     }
 
@@ -47,14 +50,35 @@ public class actions : MonoBehaviour
             {open2Door();}
         }
 
+        if (whatISee == "frontdoor")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                innerworldtext = "Quarantine days";
+                innerworld.GetComponent<Text>().text = innerworldtext;
+                innerworld.SetActive(true);
+                StartCoroutine("WaitForSec");
+            }
+        }
+
         if (whatISee == "msi")
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (laptop.laptopOpen == false)
+                if (laptop.abletowork == true)
                 {
-                    laptop.laptopOpen = true;
-                    
+                    if (laptop.laptopOpen == false)
+                    {
+                        laptop.laptopOpen = true;
+
+                    }
+                }
+                else
+                {
+                    innerworldtext = "I think I have done enough, I am too tired";
+                    innerworld.GetComponent<Text>().text = innerworldtext;
+                    innerworld.SetActive(true);
+                    StartCoroutine("WaitForSec");
                 }
             }
             if (laptop.laptopOpen == true && Input.GetKeyDown(KeyCode.R))
@@ -207,9 +231,11 @@ public class actions : MonoBehaviour
         }
     }
 
-    void laptoptask()
+    IEnumerator WaitForSec()
     {
-
+        yield return new WaitForSeconds(2);
+        innerworld.SetActive(false);
+        //closing = false;
     }
-    
+
 }

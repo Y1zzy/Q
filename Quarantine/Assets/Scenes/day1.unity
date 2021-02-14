@@ -1196,12 +1196,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logoText: {fileID: 367217582}
-  accomplished: {fileID: 213344360}
   customizedHour: 2
   Time: {fileID: 1784519422}
   fadeanimation: {fileID: 1438979950}
   screen: {fileID: 798848674}
   accomplishedtext: Sup
+  fading: {fileID: 0}
 --- !u!61 &202472962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1454,7 +1454,7 @@ GameObject:
   - component: {fileID: 213344363}
   - component: {fileID: 213344362}
   m_Layer: 5
-  m_Name: Info Text
+  m_Name: innerworld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1608,12 +1608,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logoText: {fileID: 1504574804}
-  accomplished: {fileID: 0}
   customizedHour: 2
   Time: {fileID: 1784519422}
   fadeanimation: {fileID: 0}
   screen: {fileID: 0}
   accomplishedtext: 
+  fading: {fileID: 0}
 --- !u!1 &242161828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,12 +1946,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logoText: {fileID: 632802836}
-  accomplished: {fileID: 0}
   customizedHour: 1
   Time: {fileID: 1784519422}
   fadeanimation: {fileID: 0}
   screen: {fileID: 0}
   accomplishedtext: 
+  fading: {fileID: 0}
 --- !u!1 &259336060 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5622740553767255227, guid: b6419d3afaae5be498434dc5dcf86642,
@@ -3108,6 +3108,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6320977314883018600, guid: 187e62b79bf94624dbe9bf6a032dbfd9,
+        type: 3}
+      propertyPath: m_Name
+      value: frontdoor
+      objectReference: {fileID: 0}
+    - target: {fileID: -6320977314883018600, guid: 187e62b79bf94624dbe9bf6a032dbfd9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -6320977314883018600, guid: 187e62b79bf94624dbe9bf6a032dbfd9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: -4733832059918527032, guid: 187e62b79bf94624dbe9bf6a032dbfd9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3171,7 +3186,17 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 187e62b79bf94624dbe9bf6a032dbfd9,
         type: 3}
       propertyPath: m_Name
-      value: door (2)
+      value: frontdoor
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 187e62b79bf94624dbe9bf6a032dbfd9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 187e62b79bf94624dbe9bf6a032dbfd9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 187e62b79bf94624dbe9bf6a032dbfd9, type: 3}
@@ -7175,6 +7200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screen: {fileID: 1178526795}
   laptopOpen: 0
+  abletowork: 0
 --- !u!1001 &802854152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8040,12 +8066,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logoText: {fileID: 97004620}
-  accomplished: {fileID: 0}
   customizedHour: 0
   Time: {fileID: 0}
   fadeanimation: {fileID: 0}
   screen: {fileID: 0}
   accomplishedtext: 
+  fading: {fileID: 0}
 --- !u!1001 &944553061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8301,12 +8327,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logoText: {fileID: 1987263510}
-  accomplished: {fileID: 0}
   customizedHour: 0
   Time: {fileID: 0}
   fadeanimation: {fileID: 0}
   screen: {fileID: 0}
   accomplishedtext: 
+  fading: {fileID: 0}
 --- !u!1001 &963480319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8574,7 +8600,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1746685980}
   m_HandleRect: {fileID: 1746685979}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -8774,12 +8800,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logoText: {fileID: 613773212}
-  accomplished: {fileID: 0}
   customizedHour: 0
   Time: {fileID: 0}
   fadeanimation: {fileID: 0}
   screen: {fileID: 0}
   accomplishedtext: 
+  fading: {fileID: 0}
 --- !u!1 &1063747528 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 734857867591420800, guid: beaed55e0e575f649a0169d5155b8a03,
@@ -12302,7 +12328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1642346796
 Transform:
   m_ObjectHideFlags: 0
@@ -12324,16 +12350,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642346795}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45dd3355ddce31245be3ca0b6c09c2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeManager: {fileID: 1784519422}
-  timeText: {fileID: 0}
-  calendar: {fileID: 0}
-  initialhr: 11
-  initialmin: 37
+  laptoptasks: {fileID: 798848674}
 --- !u!1001 &1646907094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12756,12 +12779,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logoText: {fileID: 674330670}
-  accomplished: {fileID: 0}
   customizedHour: 0
   Time: {fileID: 0}
   fadeanimation: {fileID: 0}
   screen: {fileID: 0}
   accomplishedtext: 
+  fading: {fileID: 0}
 --- !u!1001 &1703727704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13589,9 +13612,7 @@ MonoBehaviour:
   daylight: {fileID: 1746665699}
   lightValue: {fileID: 1746665700}
   angle: 0
-  taskhr: 0
-  taskmin: 0
-  tasksecond: 0
+  hoursworked: 0
 --- !u!1 &1807451423
 GameObject:
   m_ObjectHideFlags: 0
@@ -13680,12 +13701,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logoText: {fileID: 1629414906}
-  accomplished: {fileID: 0}
   customizedHour: 0
   Time: {fileID: 0}
   fadeanimation: {fileID: 0}
   screen: {fileID: 0}
   accomplishedtext: 
+  fading: {fileID: 0}
 --- !u!1 &1825965614
 GameObject:
   m_ObjectHideFlags: 0
@@ -14741,12 +14762,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logoText: {fileID: 1292470383}
-  accomplished: {fileID: 0}
   customizedHour: 2
   Time: {fileID: 1784519422}
   fadeanimation: {fileID: 0}
   screen: {fileID: 0}
   accomplishedtext: 
+  fading: {fileID: 0}
 --- !u!1 &1946887405
 GameObject:
   m_ObjectHideFlags: 0
@@ -14927,12 +14948,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logoText: {fileID: 363691255}
-  accomplished: {fileID: 0}
   customizedHour: 0
   Time: {fileID: 0}
   fadeanimation: {fileID: 0}
   screen: {fileID: 0}
   accomplishedtext: 
+  fading: {fileID: 0}
 --- !u!1 &1987263510
 GameObject:
   m_ObjectHideFlags: 0
@@ -16198,6 +16219,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 2758eb97eb32b134faec3fbde4a292be,
         type: 2}
+    - target: {fileID: 854393706, guid: d5de8c58495cec742a3e0b220ef8d831, type: 3}
+      propertyPath: innerworld
+      value: 
+      objectReference: {fileID: 213344360}
     - target: {fileID: 2812692388536633657, guid: d5de8c58495cec742a3e0b220ef8d831,
         type: 3}
       propertyPath: m_TagString
