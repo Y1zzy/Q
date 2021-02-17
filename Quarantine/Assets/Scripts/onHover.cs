@@ -9,7 +9,7 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
     public GameObject logoText;
     public int customizedHour;
     public timer Time;
-    public Animator fadeanimation;
+    //public Animator fadeanimation;
     public laptop screen;
     //private int hoursofworking;
     //public Text accomplished;
@@ -29,8 +29,7 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
     public void OnPointerEnter(PointerEventData eventData)
     {
         logoText.SetActive(true);
-       
-        
+
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -38,6 +37,7 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
         
         Time.initialhr += customizedHour;
         Time.hoursworked += customizedHour;
+        Time.hoursrested -= customizedHour/2;
         screen.laptopOpen = false;
         Debug.Log(Time.initialhr + " and " + Time.hoursworked + "workable");
 

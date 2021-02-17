@@ -9,12 +9,13 @@ public class timer : MonoBehaviour
     public int hour,minute,second;
     private float startTime;
     public Text timeText;
-    public Text calendar;
+    //public Text calendar;
+    public int dayInMonth;
     public int initialhr = 11, initialmin = 37;
     public GameObject daylight;
     public Light lightValue;
     public float angle;
-    public int hoursworked;
+    public int hoursworked,hoursrested;
     
     //public int taskhr, taskmin, tasksecond;
     
@@ -37,9 +38,13 @@ public class timer : MonoBehaviour
         second = (int)(startTime%60);
         minute = initialmin + (int)(startTime / 60)%60;
         hour = initialhr + (int)(startTime / 3600) % 24;
+        if (hour > 24)
+        {
+            hour -= 24;
+        }
         timeText.text = string.Format("{0:0}:{1:00}:{2:00}",hour,minute,second);
         
-        calendar.text = "Mar.9th 2020";
+        //calendar.text = "Mar.9th 2020";
         sunlight();
     }
 

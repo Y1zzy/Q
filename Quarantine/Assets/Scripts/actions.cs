@@ -13,7 +13,6 @@ public class actions : MonoBehaviour
     public GameObject laptopScene;
     //public bool onBed;
 
-
     public player onBedStatus;
     public GameObject phoneScreen;
     public device chat;
