@@ -24,7 +24,7 @@ public class raycasting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.magenta);
+        Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.magenta);
 
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
@@ -69,6 +69,10 @@ public class raycasting : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         uiObject.SetActive(false);
+        Debug.Log(uiObject.GetComponent<Text>().text);
+        uiObject.GetComponent<Text>().text = "null";
+       
+
         closing = false;
     }
 }

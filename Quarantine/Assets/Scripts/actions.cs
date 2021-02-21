@@ -28,7 +28,7 @@ public class actions : MonoBehaviour
     void start()
     {
         innerworld.SetActive(false);
-        //innerworldtext = innerworld.GetComponent<Text>.text.ToString();
+        
         //raycastobj = this.GetComponent<raycasting>();
     }
 
@@ -60,6 +60,19 @@ public class actions : MonoBehaviour
             }
         }
 
+        if (whatISee == "sofa")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                innerworldtext = "Should I get a television or something?";
+                innerworld.GetComponent<Text>().text = innerworldtext;
+                innerworld.SetActive(true);
+                StartCoroutine("WaitForSec");
+                innerworldtext = "Nah, I don't waste my time on that...";
+                innerworld.GetComponent<Text>().text = innerworldtext;
+                StartCoroutine("WaitForSec");
+            }
+        }
         if (whatISee == "msi")
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -78,6 +91,7 @@ public class actions : MonoBehaviour
                     innerworld.GetComponent<Text>().text = innerworldtext;
                     innerworld.SetActive(true);
                     StartCoroutine("WaitForSec");
+
                 }
             }
             if (laptop.laptopOpen == true && Input.GetKeyDown(KeyCode.R))
@@ -217,7 +231,8 @@ public class actions : MonoBehaviour
 
     void goToBed()
     {
-        if (onBedStatus.stop == false)
+        Debug.Log("I am on Bed");
+        /*if (onBedStatus.stop == false)
         {
             transform.position = new Vector3(-10, 7.42f, -4);
             transform.localEulerAngles = new Vector3(70,0,0);
@@ -227,7 +242,7 @@ public class actions : MonoBehaviour
         {
             transform.position = new Vector3(-5, 7.42f, -4);
             onBedStatus.stop = false;
-        }
+        }*/
     }
 
     IEnumerator WaitForSec()
