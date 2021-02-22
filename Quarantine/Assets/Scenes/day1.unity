@@ -8894,8 +8894,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1746685980}
   m_HandleRect: {fileID: 1746685979}
   m_Direction: 0
-  m_Value: -6098287.5
-  m_Size: 0.8798077
+  m_Value: -11.636781
+  m_Size: 0.9433009
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10295,7 +10295,8 @@ MonoBehaviour:
   - miaomiaomiaomiao
   - ??
   - happy new year
-  msgs1: []
+  msgs1:
+  - sup
   msgs2: []
   msgs3: []
   leftorright: 00010001000100010001
@@ -11005,7 +11006,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 152457090, y: 0}
+  m_AnchoredPosition: {x: 36.5, y: -183}
   m_SizeDelta: {x: 193.99963, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1410416933
