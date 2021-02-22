@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Wechat : MonoBehaviour
 {
     public GameObject msgPrefab;
+    public GameObject msgPrefab2;
     public ScrollRect scrollRect;
     public timer timeRn;
     public List<string> msgs = new List<string>();
@@ -23,7 +24,7 @@ public class Wechat : MonoBehaviour
 
     int index = 0;
     int maxSize = 0;
-    public string time = "5:00";
+    public string time = "0:00";
 
 
     public void MIAOUPDATEUPDATE()// call when time changes!!!!
@@ -50,13 +51,13 @@ public class Wechat : MonoBehaviour
 
     private void Start()
     {
-        time = "5:00";
+        time = "0:00";
         MIAOUPDATEUPDATE();
     }
 
     void Update()
     {
-        if (index <= maxSize)
+        if (index < maxSize)
             {
             if (Input.GetKeyDown(KeyCode.Q))
             {
