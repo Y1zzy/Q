@@ -7,6 +7,7 @@ public class Wechat : MonoBehaviour
 {
     public GameObject msgPrefab;
     public ScrollRect scrollRect;
+    public timer timeRn;
     public List<string> msgs = new List<string>();
     public List<string> msgs1 = new List<string>();
     public List<string> msgs2 = new List<string>();
@@ -22,7 +23,7 @@ public class Wechat : MonoBehaviour
 
     int index = 0;
     int maxSize = 0;
-    public string time = "0:00";
+    public string time = "5:00";
 
 
     public void MIAOUPDATEUPDATE()// call when time changes!!!!
@@ -49,7 +50,7 @@ public class Wechat : MonoBehaviour
 
     private void Start()
     {
-        time = "0:00";
+        time = "5:00";
         MIAOUPDATEUPDATE();
     }
 
