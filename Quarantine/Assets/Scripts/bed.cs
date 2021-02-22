@@ -27,6 +27,7 @@ public class bed : MonoBehaviour
         {
             transform.position = new Vector3(-5, 7.42f, -4);
             onBedStatus = false;
-            
+
         }
+    }
 }

@@ -49,10 +49,16 @@ public class raycasting : MonoBehaviour
                     
                 }
             }
+            else
+            {
+                InteractText = "null";
+                this.GetComponent<actions>().whatISee = InteractText;
+            }
         }
         else
         {
-            //InteractText = "null";
+            InteractText = "null";
+            this.GetComponent<actions>().whatISee = InteractText;
             if (uiObject.active)
             {
                 if (!closing)
