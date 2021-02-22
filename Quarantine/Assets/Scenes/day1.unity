@@ -8894,8 +8894,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1746685980}
   m_HandleRect: {fileID: 1746685979}
   m_Direction: 0
-  m_Value: -11.636781
-  m_Size: 0.9433009
+  m_Value: -513429.47
+  m_Size: 0.943299
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10283,9 +10283,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   msgPrefab: {fileID: 5564421471817970677, guid: 0d06181a759167c45bfc6758ca6b1b40,
     type: 3}
+  msgPrefab2: {fileID: 0}
   scrollRect: {fileID: 1308129483}
+  timeRn: {fileID: 0}
   msgs:
-  - how have you been?
+  - Did you guys see the news?
   - shit
   - i don't get it
   - what is this
@@ -11006,7 +11008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 36.5, y: -183}
+  m_AnchoredPosition: {x: 5647633, y: 0}
   m_SizeDelta: {x: 193.99963, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1410416933

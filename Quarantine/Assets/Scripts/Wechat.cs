@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class Wechat : MonoBehaviour
 {
     public GameObject msgPrefab;
+    public GameObject msgPrefab2;
     public ScrollRect scrollRect;
+    public timer timeRn;
     public List<string> msgs = new List<string>();
     public List<string> msgs1 = new List<string>();
     public List<string> msgs2 = new List<string>();
@@ -55,7 +57,7 @@ public class Wechat : MonoBehaviour
 
     void Update()
     {
-        if (index <= maxSize)
+        if (index < maxSize)
             {
             if (Input.GetKeyDown(KeyCode.Q))
             {
