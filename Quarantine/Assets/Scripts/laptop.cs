@@ -6,10 +6,12 @@ public class laptop : MonoBehaviour
 {
     public GameObject screen;
     public bool laptopOpen;
+    public bool abletowork;
     // Start is called before the first frame update
     void Start()
     {
         laptopOpen = false;
+        abletowork = true;
     }
 
     // Update is called once per frame

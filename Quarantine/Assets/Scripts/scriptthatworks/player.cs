@@ -8,7 +8,7 @@ public class player : MonoBehaviour
     
     [SerializeField] private string horizontalInputName, verticalInputName;
     [SerializeField] private float movementSpeed;
-    //public actions movement;
+ 
     public bool stop;
     private CharacterController charController;
 
@@ -24,11 +24,11 @@ public class player : MonoBehaviour
     void Update()
     {
 
-        //isOnBed = movement.onBed;
         
         PlayerMovement();
- 
+
         
+
     }
 
     void PlayerMovement()
