@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class Wechat : MonoBehaviour
 {
     public GameObject msgPrefab;
-    public GameObject msgPrefab2;
+    public GameObject child, child1;
+    
+    //public GameObject msgPrefab2;
     public ScrollRect scrollRect;
+    public GameObject chatbox;
     public timer timeRn;
     public List<string> msgs = new List<string>();
     public List<string> msgs1 = new List<string>();
@@ -62,15 +65,22 @@ public class Wechat : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 GameObject msg = Instantiate(msgPrefab, scrollRect.content);
+                GameObject child = msg.transform.GetChild(0).gameObject;
+                GameObject child1 = msg.transform.GetChild(1).gameObject;
                 //GameObject msg = Instantiate(msgPrefab2, scrollRect.content);
                 if (Current_LeftorRight_List[index])
                 {
+                    child.SetActive(false);
+                    child1.SetActive(true);
+                    //msg.transform.FindChild("Image").gameObject; 
                     //GameObject msg = Instantiate(msgPrefab, scrollRect.content);
                     msg.GetComponent<Msg>().ChangeText(Current_Msg_List[index], true);
                 }
                 else
                 {
-                    //GameObject msg2 = Instantiate(msgPrefab2, scrollRect.content);
+                    child.SetActive(true);
+                    child1.SetActive(false);
+                    //GameObject msg = Instantiate(msgPrefab2, scrollRect.content);
                     msg.GetComponent<Msg>().ChangeText(Current_Msg_List[index], false);
                 }
                 scrollRect.verticalNormalizedPosition = 0;
