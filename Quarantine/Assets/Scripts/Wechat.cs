@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Wechat : MonoBehaviour
 {
     public GameObject msgPrefab;
-    public GameObject msgPrefab2;
+    //public GameObject msgPrefab2;
     public ScrollRect scrollRect;
     public timer timeRn;
     public List<string> msgs = new List<string>();
