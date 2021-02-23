@@ -8894,8 +8894,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1746685980}
   m_HandleRect: {fileID: 1746685979}
   m_Direction: 0
-  m_Value: -8.318469
-  m_Size: 0.9433009
+  m_Value: -782216.5
+  m_Size: 0.93846154
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10283,17 +10283,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   msgPrefab: {fileID: 5464849146618504618, guid: 6d292191b14f4f942a754419af413801,
     type: 3}
-  msgPrefab2: {fileID: 5564421471817970677, guid: 0d06181a759167c45bfc6758ca6b1b40,
-    type: 3}
+  child: {fileID: 0}
+  child1: {fileID: 0}
   scrollRect: {fileID: 1308129483}
+  chatbox: {fileID: 0}
   timeRn: {fileID: 0}
   msgs:
-  - Did you guys see the news?
-  - shit
-  - i don't get it
-  - what is this
-  - oh no
-  - i don't like it
+  - 'Did you guys see the news? '
+  - 'shit '
+  - 'i don''t get it '
+  - 'what is this '
+  - 'oh no '
+  - 'i don''t like it '
   - good
   - miaomiaomiaomiao
   - ??
@@ -11009,7 +11010,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.00010681152, y: -183}
+  m_AnchoredPosition: {x: 9386508, y: 0}
   m_SizeDelta: {x: 193.99963, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1410416933
