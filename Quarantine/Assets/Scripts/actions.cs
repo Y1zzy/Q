@@ -60,14 +60,11 @@ public class actions : MonoBehaviour
             }
         }
 
-        if (whatISee == "sofa")
+        if (whatISee == "sofa2")
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                innerworldtext = "Should I get a television or something?";
-                innerworld.GetComponent<Text>().text = innerworldtext;
-                innerworld.SetActive(true);
-                StartCoroutine("WaitForSec");
+                
                 innerworldtext = "Nah, I don't waste my time on that...";
                 innerworld.GetComponent<Text>().text = innerworldtext;
                 StartCoroutine("WaitForSec");
@@ -103,7 +100,7 @@ public class actions : MonoBehaviour
 
         if (whatISee == "bedroomswitch")
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (bedroomLight.isOn == true)
                 {
@@ -118,7 +115,7 @@ public class actions : MonoBehaviour
 
         if (whatISee == "livingroomswitch")
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (livingroomLight.isOn == true)
                 {
@@ -133,7 +130,7 @@ public class actions : MonoBehaviour
         if (whatISee == "bathroomswitch")
         {
 
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (bathroomLight.isOn == true)
                 {
@@ -148,7 +145,7 @@ public class actions : MonoBehaviour
         if (whatISee == "kitchenswitch")
         {
 
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (kitchenLight.isOn == true)
                 {
@@ -244,7 +241,7 @@ public class actions : MonoBehaviour
 
         IEnumerator WaitForSec()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             innerworld.SetActive(false);
             //closing = false;
         }

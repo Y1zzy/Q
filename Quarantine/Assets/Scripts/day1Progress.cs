@@ -8,6 +8,7 @@ public class day1Progress : MonoBehaviour
     public timer timeManager;
     public Text timeText;
     public Text calendar;
+    public Wechat convo;
     public string month;
     public int date;
     public int initialhr = 11, initialmin = 37;
