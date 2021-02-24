@@ -14,7 +14,7 @@ public class day1Progress : MonoBehaviour
     public int initialhr = 11, initialmin = 37;
     public laptop laptoptasks;
     public int chapter;
-    //public bool mandatorychat;
+   
     
     // Start is called before the first frame update
     void Start()
@@ -23,8 +23,7 @@ public class day1Progress : MonoBehaviour
         date = 9;
         chapter = 1;
         calendar.text = string.Format(month + " . " +  date + "th"  + " 2020");
-        //mandatorychat = true;
-        //calendar.text = "Mar.9th 2020";
+        
     }
 
     // Update is called once per frame
@@ -32,14 +31,16 @@ public class day1Progress : MonoBehaviour
     {
         //general statement
         // a check of status and general progress
-        if (timeManager.hoursworked >= 10)
-        {laptoptasks.abletowork = false;}
-        else
-        { laptoptasks.abletowork = true; }
+        workStatus();
         
         if (timeManager.hoursrested >= 2)
         {
 
+        }
+
+        if (timeManager.hour == 12)
+        {
+            convo.convoNum = 1;
         }
         
         //timeManager.hour 
@@ -50,4 +51,28 @@ public class day1Progress : MonoBehaviour
         //should I let loose a bit?
         //What else have I missed today?
     }
+
+    void workStatus()
+    {
+        if (timeManager.hoursworked >= 10)
+        { laptoptasks.abletowork = false; }
+        else
+        { laptoptasks.abletowork = true; }
+    }
+
+    /*public void dateTracking()// call when time changes!!!!
+    {
+        switch (date)
+        {
+            case 0:
+                
+                break;
+            case 1:
+                
+                break;
+            case 2:
+                
+                break;
+        }
+    }*/
 }

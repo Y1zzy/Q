@@ -67,6 +67,7 @@ public class actions : MonoBehaviour
                 
                 innerworldtext = "Nah, I don't waste my time on that...";
                 innerworld.GetComponent<Text>().text = innerworldtext;
+                innerworld.SetActive(true);
                 StartCoroutine("WaitForSec");
             }
         }

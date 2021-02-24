@@ -11,6 +11,7 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
     public timer Time;
     //public Animator fadeanimation;
     public laptop screen;
+    //public GameObject innerworld;
     //private int hoursofworking;
     //public Text accomplished;
     //private string done;
@@ -39,7 +40,8 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
         Time.hoursworked += customizedHour;
         Time.hoursrested -= customizedHour/2;
         screen.laptopOpen = false;
-        Debug.Log(Time.initialhr + " and " + Time.hoursworked + "workable");
+        //Debug.Log(Time.initialhr + " and " + Time.hoursworked + "workable");
+
 
     }
 

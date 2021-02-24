@@ -1119,7 +1119,6 @@ GameObject:
   - component: {fileID: 202472961}
   - component: {fileID: 202472962}
   - component: {fileID: 202472959}
-  - component: {fileID: 202472964}
   m_Layer: 5
   m_Name: Software1
   m_TagString: Untagged
@@ -1277,27 +1276,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &202472964
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202472957}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &203050580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8894,8 +8872,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1746685980}
   m_HandleRect: {fileID: 1746685979}
   m_Direction: 0
-  m_Value: -8.318481
-  m_Size: 0.9433009
+  m_Value: -2742.5042
+  m_Size: 0.943299
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10286,28 +10264,43 @@ MonoBehaviour:
   child: {fileID: 0}
   child1: {fileID: 0}
   scrollRect: {fileID: 1308129483}
-  chatbox: {fileID: 0}
+  innerworld: {fileID: 213344360}
   timeRn: {fileID: 0}
+  convoNum: 0
   msgs:
   - 'Did you guys see the news? '
-  - 'shit '
-  - 'i don''t get it '
-  - 'what is this '
-  - 'oh no '
-  - 'i don''t like it '
-  - good
-  - miaomiaomiaomiao
-  - ??
-  - happy new year
+  - Our tournament next week
+  - gets cancelled.
+  - man....
+  - Damn!
+  - I rescheduled my trip for this tournament.
+  - 'it''s just a matter of time '
+  - 'for the Coronavirus outbreak. '
+  - Stay safe if anyone traveling.
+  - bet
+  - 'Anyone still down to play ball '
+  - before it's too late?
+  - down!
+  - down..
   msgs1:
+  - Are you on Spring Break now?
+  - Yes.
+  - Today.
+  - Are you going anywhere?
+  - Was planning to NYC
+  - but I guess I am not going now.
+  - And my tournament in Boston
+  - is cancelled too.
+  - What tournament?
+  - The basketball tournament with other international students
+  - sup
   - sup
   msgs2: []
   msgs3: []
-  leftorright: 00010001000100010001
-  leftorright1: 
+  leftorright: 0101010001010101010101010100
+  leftorright1: 010000010000000001000101
   leftorright2: 
   leftorright3: 
-  time: 0:00
 --- !u!1 &1321143973
 GameObject:
   m_ObjectHideFlags: 0
@@ -11010,7 +11003,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000015258789}
+  m_AnchoredPosition: {x: 30076.047, y: -183}
   m_SizeDelta: {x: 193.99963, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1410416933
