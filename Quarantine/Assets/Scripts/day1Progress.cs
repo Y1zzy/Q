@@ -75,9 +75,9 @@ public class day1Progress : MonoBehaviour
         switch (chapter)
         {
             case 1:
-                //mandatoryConvo(1, 11, 12);
-                //mandatoryConvo()
-                
+                mandatoryConvo(1, 11, 12);
+                mandatoryConvo(2, 13, 19);
+                mandatoryConvo(3, 19, 20);
                 break;
             case 2:
                 

@@ -13,13 +13,18 @@ public class device : MonoBehaviour
     public GameObject newsOn;
     public GameObject newsOff;
     public GameObject newsPage;
+    public GameObject plannerOn;
+    public GameObject plannerOff;
+    public GameObject plannerPage;
     public bool newsIsOn;
     public bool chatIsOn;
+    public bool plannerIsOn;
     // Start is called before the first frame update
     void Start()
     {
         deviceOn = false;
         chatIsOn = false;
+        plannerIsOn = false;
         apps.SetActive(false);
         newsIsOn = false;
     }
@@ -79,7 +84,7 @@ public class device : MonoBehaviour
         message.SetActive(false);
         chatIsOn = false;
 
-        if (newsIsOn == false)
+        if (chatIsOn == false)
         {
             newsOff.SetActive(true);
             
@@ -87,12 +92,36 @@ public class device : MonoBehaviour
             //message.SetActive(false);
             newsIsOn = true;
         }
-        if (newsIsOn == true)
+        if (chatIsOn == true)
         {
             newsOff.SetActive(false);
             newsOn.SetActive(true);
             //message.SetActive(true);
             newsIsOn = false;
+        }
+    }
+
+    void planner()
+    {
+        newsIsOn = false;
+        chatIsOn = false;
+        newsOff.SetActive(true);
+        newsOn.SetActive(false);
+        newsIsOn = true;
+        if (chatIsOn == false)
+        {
+            chatOff.SetActive(true);
+            //newsIsOn = false;
+            chatOn.SetActive(false);
+            message.SetActive(false);
+            chatIsOn = true;
+        }
+        if (chatIsOn == true)
+        {
+            chatOff.SetActive(false);
+            chatOn.SetActive(true);
+            message.SetActive(true);
+            chatIsOn = false;
         }
     }
 }
