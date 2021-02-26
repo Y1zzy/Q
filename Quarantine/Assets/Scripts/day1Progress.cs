@@ -13,6 +13,7 @@ public class day1Progress : MonoBehaviour
     public int date;
     public int initialhr = 11, initialmin = 37;
     public laptop laptoptasks;
+    public bed rest;
     public int chapter;
    
     
@@ -23,7 +24,7 @@ public class day1Progress : MonoBehaviour
         date = 9;
         chapter = 1;
         calendar.text = string.Format(month + " . " +  date + "th"  + " 2020");
-        
+        //dateTracking();
     }
 
     // Update is called once per frame
@@ -32,24 +33,14 @@ public class day1Progress : MonoBehaviour
         //general statement
         // a check of status and general progress
         workStatus();
+        restStatus();
         
-        if (timeManager.hoursrested >= 2)
-        {
-
-        }
 
         if (timeManager.hour == 12)
         {
             convo.convoNum = 1;
         }
         
-        //timeManager.hour 
-        //at 12:00am
-        //start being dizzy
-
-        //Man, it feels empty.
-        //should I let loose a bit?
-        //What else have I missed today?
     }
 
     void workStatus()
@@ -60,19 +51,50 @@ public class day1Progress : MonoBehaviour
         { laptoptasks.abletowork = true; }
     }
 
-    /*public void dateTracking()// call when time changes!!!!
+    void restStatus()
     {
-        switch (date)
+        if (timeManager.hoursrested >= 2 || timeManager.hoursworked <=4)
         {
-            case 0:
-                
-                break;
+            rest.sleepOrNot = false;
+        }
+        else
+        {
+            rest.sleepOrNot = true;
+        }
+    }
+
+    void mandatoryConvo(int convoNumber, int beginninghr, int endhr)
+    {
+        if(timeManager.hour >=beginninghr || timeManager.hour <= endhr)
+        {
+            convo.convoNum = convoNumber;
+        }
+    }
+    public void dateTracking()// call when time changes!!!!
+    {
+        switch (chapter)
+        {
             case 1:
+                //mandatoryConvo(1, 11, 12);
+                //mandatoryConvo()
                 
                 break;
             case 2:
                 
                 break;
+            case 3:
+                
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
         }
-    }*/
+    }
 }

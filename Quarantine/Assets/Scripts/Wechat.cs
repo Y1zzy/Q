@@ -9,6 +9,7 @@ public class Wechat : MonoBehaviour
     public GameObject child, child1;
     public ScrollRect scrollRect;
     public GameObject innerworld;
+    public bool convoDone;
     string innerworldtext;
     public timer timeRn;
     public int convoNum = 0;
@@ -56,6 +57,7 @@ public class Wechat : MonoBehaviour
     {
         convoNum = 0;
         MIAOUPDATEUPDATE();
+        convoDone = false;
     }
 
     void Update()
@@ -90,6 +92,7 @@ public class Wechat : MonoBehaviour
 
             if (index == maxSize)
             {
+                convoDone = true;
                 innerworldtext = "That's it for the conversation.";
                 innerworld.GetComponent<Text>().text = innerworldtext;
                 innerworld.SetActive(true);
