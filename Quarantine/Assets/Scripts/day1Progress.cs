@@ -15,6 +15,8 @@ public class day1Progress : MonoBehaviour
     public laptop laptoptasks;
     public bed rest;
     public int chapter;
+    //bool convoExe;
+    //int convoNumber;
 
     string innerworldtext;
 
@@ -38,7 +40,7 @@ public class day1Progress : MonoBehaviour
         
         if(chapter == 1)
         {
-            if(timeManager.hour >= 11 && timeManager.hour <= 12)
+            /*if(timeManager.hour >= 11 && timeManager.hour <= 12)
             {
                 convo.convoNum = 0;
             }
@@ -51,8 +53,8 @@ public class day1Progress : MonoBehaviour
             if (timeManager.hour >= 17 && timeManager.hour <= 19)
             {
                 convo.convoNum = 2;
-            }
-            //mandatoryConvo(1,11,12);
+            }*/
+            convoTracking();
         }
 
 
@@ -80,18 +82,41 @@ public class day1Progress : MonoBehaviour
         }
     }
 
-    /*void mandatoryConvo(int convoNumber, int beginninghr, int endhr)
+    void mandatoryConvo(int convoNumber, int beginninghr, int endhr)
     {
-       // Debug.Log(timeManager.hour);
-        if(timeManager.hour >=beginninghr || timeManager.hour <= endhr)
+       
+        Debug.Log(convo.convoNum);
+        if (timeManager.hour >= beginninghr && timeManager.hour <= endhr)
         {
+            //Debug.Log("may i come here?");
             convo.convoNum = convoNumber;
         }
-    }*/
+        else
+        {
+            //Debug.Log("heloo");
+            if (convoNumber == convo.convoNum && convo.convoDone == true)
+            {
+                convo.destroy();
+                convo.convoNum += 1;
+                Debug.Log("convoNum plused" + convo.convoNum);
+            }
+            
+        }
+       
+    }
 
-    void chatTracking()
+    public void convoTracking()
     {
-        
+        switch (convo.convoNum)
+        {
+            case 0:
+                mandatoryConvo(0, 11, 12);
+                //Debug.Log("?");
+                break;
+            case 1:
+                mandatoryConvo(1, 13, 14);
+                break;
+        }
     }
 
     public void dateTracking()// call when time changes!!!!
