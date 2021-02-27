@@ -5,18 +5,20 @@ using UnityEngine;
 public class bed : MonoBehaviour
 {
     public bool onBedStatus;
-    public int hoursRested;
+    public timer time;
+    //public int hoursRested;
+    public bool sleepOrNot;
     // Start is called before the first frame update
     void Start()
     {
-        //onBedStatus = false;
+        sleepOrNot = false;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (onBedStatus == false)
+        /*if (onBedStatus == false)
         {
             transform.position = new Vector3(-10, 7.42f, -4);
             transform.localEulerAngles = new Vector3(70, 0, 0);
@@ -28,6 +30,13 @@ public class bed : MonoBehaviour
             transform.position = new Vector3(-5, 7.42f, -4);
             onBedStatus = false;
 
-        }
+        }*/
+    }
+
+    public void bedTime()
+    {
+        time.hoursrested += 1;
+        time.initialhr += 1;
+        
     }
 }

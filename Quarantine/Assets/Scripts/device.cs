@@ -8,20 +8,27 @@ public class device : MonoBehaviour
     public GameObject chatOn;
     public GameObject chatOff;
     public GameObject message;
+    //public GameObject plannerPage;
     public GameObject apps;
     public bool deviceOn;
     public GameObject newsOn;
     public GameObject newsOff;
     public GameObject newsPage;
+    public GameObject plannerOn;
+    public GameObject plannerOff;
+    public GameObject plannerPage;
     public bool newsIsOn;
     public bool chatIsOn;
+    public bool plannerIsOn;
     // Start is called before the first frame update
     void Start()
     {
         deviceOn = false;
         chatIsOn = false;
+        plannerIsOn = false;
         apps.SetActive(false);
         newsIsOn = false;
+        plannerPage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,6 +46,10 @@ public class device : MonoBehaviour
             {
                 news();
             }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                planner();
+            }
         }
         else
         {
@@ -50,12 +61,16 @@ public class device : MonoBehaviour
 
     }
 
-    void chat()
+    void chat() //1
     {
         newsIsOn = false;
+        plannerIsOn = false;
         newsOff.SetActive(true);
         newsOn.SetActive(false);
+        plannerOff.SetActive(true);
+        plannerOn.SetActive(false);
         newsIsOn = true;
+        plannerPage.SetActive(false);
         if (chatIsOn == false)
         {
             chatOff.SetActive(true);
@@ -72,12 +87,16 @@ public class device : MonoBehaviour
             chatIsOn = false;
         }
     }
-    void news()
+    void news() 
     {
         chatOff.SetActive(true);
         chatOn.SetActive(false);
         message.SetActive(false);
         chatIsOn = false;
+        plannerIsOn = false;
+        plannerOff.SetActive(true);
+        plannerOn.SetActive(false);
+        plannerPage.SetActive(false);
 
         if (newsIsOn == false)
         {
@@ -93,6 +112,33 @@ public class device : MonoBehaviour
             newsOn.SetActive(true);
             //message.SetActive(true);
             newsIsOn = false;
+        }
+    }
+
+    void planner()
+    {
+        newsIsOn = false;
+        chatIsOn = false;
+        newsOff.SetActive(true);
+        newsOn.SetActive(false);
+        chatOff.SetActive(true);
+        chatOn.SetActive(false);
+        message.SetActive(false);
+        //newsIsOn = true;
+        if (plannerIsOn == false)
+        {
+            plannerOff.SetActive(true);
+          
+            plannerOn.SetActive(false);
+            plannerPage.SetActive(false);
+            plannerIsOn = true;
+        }
+        if (plannerIsOn == true)
+        {
+            plannerOff.SetActive(false);
+            plannerOn.SetActive(true);
+            plannerPage.SetActive(true);
+            plannerIsOn = false;
         }
     }
 }

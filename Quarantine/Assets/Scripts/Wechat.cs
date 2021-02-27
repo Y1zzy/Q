@@ -7,11 +7,12 @@ public class Wechat : MonoBehaviour
 {
     public GameObject msgPrefab;
     public GameObject child, child1;
-    
-    //public GameObject msgPrefab2;
     public ScrollRect scrollRect;
-    public GameObject chatbox;
+    public GameObject innerworld;
+    public bool convoDone;
+    string innerworldtext;
     public timer timeRn;
+    public int convoNum = 0;
     public List<string> msgs = new List<string>();
     public List<string> msgs1 = new List<string>();
     public List<string> msgs2 = new List<string>();
@@ -27,24 +28,25 @@ public class Wechat : MonoBehaviour
 
     int index = 0;
     int maxSize = 0;
-    public string time = "0:00";
+    //public string time = "0:00";
 
 
     public void MIAOUPDATEUPDATE()// call when time changes!!!!
     {
-        switch (time)
+        Debug.Log(convoNum);
+        switch (convoNum)
         {
-            case "0:00":
+            case 0:
                 maxSize = msgs.Count;
                 Current_Msg_List = msgs;
                 Current_LeftorRight_List = leftorright;
                 break;
-            case "5:00":
+            case 1:
                 maxSize = msgs1.Count;
                 Current_Msg_List = msgs1;
                 Current_LeftorRight_List = leftorright1;
                 break;
-            case "24:00":
+            case 2:
                 maxSize = msgs2.Count;
                 Current_Msg_List = msgs2;
                 Current_LeftorRight_List = leftorright2;
@@ -54,15 +56,17 @@ public class Wechat : MonoBehaviour
 
     private void Start()
     {
-        time = "0:00";
+        convoNum = 0;
         MIAOUPDATEUPDATE();
+        convoDone = false;
     }
 
     void Update()
     {
-        if (index < maxSize)
+        MIAOUPDATEUPDATE();
+        if (Input.GetKeyDown(KeyCode.Q))
             {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (index < maxSize)
             {
                 GameObject msg = Instantiate(msgPrefab, scrollRect.content);
                 GameObject child = msg.transform.GetChild(0).gameObject;
@@ -87,7 +91,20 @@ public class Wechat : MonoBehaviour
                 //LayoutRebuilder.ForceRebuildLayoutImmediate(scrollRect.content);
                 index++;
             }
+
+            if (index == maxSize)
+            {
+                convoDone = true;
+
+
+                innerworldtext = "That's it for the conversation.";
+                innerworld.GetComponent<Text>().text = innerworldtext;
+                innerworld.SetActive(true);
+                StartCoroutine("WaitForSec");
+            }
         }
+
+        
 
         if (Input.GetKeyDown(KeyCode.A)) //this is to destroy
         {
@@ -98,5 +115,12 @@ public class Wechat : MonoBehaviour
                 Destroy(child);
             }
         }
+    }
+
+    IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(1);
+        innerworld.SetActive(false);
+
     }
 }

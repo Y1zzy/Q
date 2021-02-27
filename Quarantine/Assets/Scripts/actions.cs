@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class actions : MonoBehaviour
 {
@@ -19,16 +20,21 @@ public class actions : MonoBehaviour
     public bool wechatting, discording, planner;
     public GameObject timeManager;
     public laptop laptop;
+    public bed bed;
     public lightswitch bedroomLight, bathroomLight, livingroomLight, kitchenLight;
     public bool bedroomSwitchOn, bathroomSwitchOn, livingroomSwitchOn, kitchenSwitchOn;
     public GameObject innerworld;
     string innerworldtext;
+    string controlguides;
+    public GameObject control;
+    //TextMesh controltext;
     private bool doorIsOpen, door2IsOpen;
     private string interactableObj;
     void start()
     {
         innerworld.SetActive(false);
-
+        //controlguides = "Press E for Object Interaction";
+        //control.GetComponent<TextMeshProUGUI>().text = controlguides;
         //raycastobj = this.GetComponent<raycasting>();
     }
 
@@ -60,16 +66,38 @@ public class actions : MonoBehaviour
             }
         }
 
-        if (whatISee == "sofa")
+        if (whatISee == "sofatable")
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                innerworldtext = "Should I get a television or something?";
+                
+                innerworldtext = "I didn't want a television because I will never have time to enjoy it";
                 innerworld.GetComponent<Text>().text = innerworldtext;
                 innerworld.SetActive(true);
                 StartCoroutine("WaitForSec");
-                innerworldtext = "Nah, I don't waste my time on that...";
+            }
+        }
+
+        if (whatISee == "sofa2")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                innerworldtext = "Why would I sit over here";
                 innerworld.GetComponent<Text>().text = innerworldtext;
+                innerworld.SetActive(true);
+                StartCoroutine("WaitForSec");
+            }
+        }
+
+        if (whatISee == "fridge")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                innerworldtext = "Do I have enough groceries?";
+                innerworld.GetComponent<Text>().text = innerworldtext;
+                innerworld.SetActive(true);
                 StartCoroutine("WaitForSec");
             }
         }
@@ -82,6 +110,7 @@ public class actions : MonoBehaviour
                     if (laptop.laptopOpen == false)
                     {
                         laptop.laptopOpen = true;
+                        control.SetActive(false);
 
                     }
                 }
@@ -97,13 +126,31 @@ public class actions : MonoBehaviour
             if (laptop.laptopOpen == true && Input.GetKeyDown(KeyCode.R))
             {
                 laptop.laptopOpen = false;
+                control.SetActive(true);
             }
         }
 
+        if (whatISee == "bed")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (bed.sleepOrNot == true)
+                { bed.bedTime(); }
+                else
+                {
+                    innerworldtext = "I am not too tired, I don't want to waste my time.";
+                    innerworld.GetComponent<Text>().text = innerworldtext;
+                    innerworld.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                }
+                //onBedStatus.stop = true;
+                //goToBed();
+            }
+        }
 
         if (whatISee == "bedroomswitch")
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (bedroomLight.isOn == true)
                 {
@@ -118,7 +165,7 @@ public class actions : MonoBehaviour
 
         if (whatISee == "livingroomswitch")
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (livingroomLight.isOn == true)
                 {
@@ -133,7 +180,7 @@ public class actions : MonoBehaviour
         if (whatISee == "bathroomswitch")
         {
 
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (bathroomLight.isOn == true)
                 {
@@ -148,7 +195,7 @@ public class actions : MonoBehaviour
         if (whatISee == "kitchenswitch")
         {
 
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (kitchenLight.isOn == true)
                 {
@@ -174,23 +221,16 @@ public class actions : MonoBehaviour
         }
 
 
-            if (whatISee == "bed")
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    onBedStatus.stop = true;
-                    goToBed();
-                }
-            }
+        
 
-            if (onBedStatus.stop == true) //this condition decides if the player will get on the bed or get off the bed
+        /*if (onBedStatus.stop == true) //this condition decides if the player will get on the bed or get off the bed
+        {
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    onBedStatus.stop = false;
-                    goToBed();
-                }
+                onBedStatus.stop = false;
+                goToBed();
             }
+        }*/
 
 
         }
@@ -226,9 +266,9 @@ public class actions : MonoBehaviour
             }
         }
 
-        void goToBed()
-        {
-            Debug.Log("I am on Bed");
+        //void goToBed()
+        //{
+            //Debug.Log("I am on Bed");
             /*if (onBedStatus.stop == false)
             {
                 transform.position = new Vector3(-10, 7.42f, -4);
@@ -240,11 +280,11 @@ public class actions : MonoBehaviour
                 transform.position = new Vector3(-5, 7.42f, -4);
                 onBedStatus.stop = false;
             }*/
-        }
+        //}
 
         IEnumerator WaitForSec()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             innerworld.SetActive(false);
             //closing = false;
         }
