@@ -33,6 +33,7 @@ public class Wechat : MonoBehaviour
 
     public void MIAOUPDATEUPDATE()// call when time changes!!!!
     {
+        Debug.Log(convoNum);
         switch (convoNum)
         {
             case 0:
@@ -62,6 +63,7 @@ public class Wechat : MonoBehaviour
 
     void Update()
     {
+        MIAOUPDATEUPDATE();
         if (Input.GetKeyDown(KeyCode.Q))
             {
             if (index < maxSize)
@@ -93,6 +95,8 @@ public class Wechat : MonoBehaviour
             if (index == maxSize)
             {
                 convoDone = true;
+
+
                 innerworldtext = "That's it for the conversation.";
                 innerworld.GetComponent<Text>().text = innerworldtext;
                 innerworld.SetActive(true);

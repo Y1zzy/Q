@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class actions : MonoBehaviour
 {
@@ -24,12 +25,16 @@ public class actions : MonoBehaviour
     public bool bedroomSwitchOn, bathroomSwitchOn, livingroomSwitchOn, kitchenSwitchOn;
     public GameObject innerworld;
     string innerworldtext;
+    string controlguides;
+    public GameObject control;
+    //TextMesh controltext;
     private bool doorIsOpen, door2IsOpen;
     private string interactableObj;
     void start()
     {
         innerworld.SetActive(false);
-
+        //controlguides = "Press E for Object Interaction";
+        //control.GetComponent<TextMeshProUGUI>().text = controlguides;
         //raycastobj = this.GetComponent<raycasting>();
     }
 
@@ -105,6 +110,7 @@ public class actions : MonoBehaviour
                     if (laptop.laptopOpen == false)
                     {
                         laptop.laptopOpen = true;
+                        control.SetActive(false);
 
                     }
                 }
@@ -120,6 +126,7 @@ public class actions : MonoBehaviour
             if (laptop.laptopOpen == true && Input.GetKeyDown(KeyCode.R))
             {
                 laptop.laptopOpen = false;
+                control.SetActive(true);
             }
         }
 

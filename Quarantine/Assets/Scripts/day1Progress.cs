@@ -15,16 +15,16 @@ public class day1Progress : MonoBehaviour
     public laptop laptoptasks;
     public bed rest;
     public int chapter;
-   
-    
+
+    string innerworldtext;
+
     // Start is called before the first frame update
     void Start()
     {
-        month = "Mar";
-        date = 9;
+        
         chapter = 1;
-        calendar.text = string.Format(month + " . " +  date + "th"  + " 2020");
-        //dateTracking();
+        //calendar.text = string.Format(month + " . " +  date + "th"  + " 2020");
+        dateTracking();
     }
 
     // Update is called once per frame
@@ -34,12 +34,29 @@ public class day1Progress : MonoBehaviour
         // a check of status and general progress
         workStatus();
         restStatus();
+        //Debug.Log(timeManager.hour);
         
-
-        if (timeManager.hour == 12)
+        if(chapter == 1)
         {
-            convo.convoNum = 1;
+            if(timeManager.hour >= 11 && timeManager.hour <= 12)
+            {
+                convo.convoNum = 0;
+            }
+
+            if (timeManager.hour >= 13 && timeManager.hour <= 17)
+            {
+                convo.convoNum = 1;
+            }
+
+            if (timeManager.hour >= 17 && timeManager.hour <= 19)
+            {
+                convo.convoNum = 2;
+            }
+            //mandatoryConvo(1,11,12);
         }
+
+
+        
         
     }
 
@@ -63,38 +80,62 @@ public class day1Progress : MonoBehaviour
         }
     }
 
-    void mandatoryConvo(int convoNumber, int beginninghr, int endhr)
+    /*void mandatoryConvo(int convoNumber, int beginninghr, int endhr)
     {
+       // Debug.Log(timeManager.hour);
         if(timeManager.hour >=beginninghr || timeManager.hour <= endhr)
         {
             convo.convoNum = convoNumber;
         }
+    }*/
+
+    void chatTracking()
+    {
+        
     }
+
     public void dateTracking()// call when time changes!!!!
     {
         switch (chapter)
         {
             case 1:
-                mandatoryConvo(1, 11, 12);
-                mandatoryConvo(2, 13, 19);
-                mandatoryConvo(3, 19, 20);
+                month = "Mar";
+                date = 7;
+                //mandatoryConvo(1, 11, 12, 00, 30);
                 break;
             case 2:
-                
+                month = "Mar";
+                date = 8;
+
                 break;
             case 3:
-                
+                month = "Mar";
+                date = 9;
+
                 break;
             case 4:
+                month = "Mar";
+                date = 11;
                 break;
             case 5:
+                month = "Mar";
+                date = 12;
+
                 break;
             case 6:
+                month = "Mar";
+                date = 23;
+
                 break;
             case 7:
+                month = "Apr";
+                date = 10;
                 break;
             case 8:
+                month = "May";
+                date = 5;
                 break;
         }
+        calendar.text = string.Format(month + " . " + date + "th" + " 2020");
     }
 }
