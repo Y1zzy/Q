@@ -225,7 +225,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2.5735145}
   m_LocalScale: {x: 1.286149, y: 2.1683187, z: 1.286149}
-  m_Children: []
+  m_Children:
+  - {fileID: 1861504425}
   m_Father: {fileID: 1538930168}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3329,6 +3330,9 @@ MonoBehaviour:
   onBedStatus: 0
   time: {fileID: 1784519422}
   sleepOrNot: 0
+  bedTimehr: 0
+  bedTimeMin: 0
+  toTheNextDay: 0
 --- !u!1001 &384763104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9179,8 +9183,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1746685980}
   m_HandleRect: {fileID: 1746685979}
   m_Direction: 0
-  m_Value: -2743.4712
-  m_Size: 0.9433085
+  m_Value: -8.318456
+  m_Size: 0.9433007
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10591,24 +10595,123 @@ MonoBehaviour:
   - down!
   - down..
   msgs1:
-  - Are you on Spring Break now?
+  - Are you on Spring Break?
   - Yes.
   - Today.
   - Are you going anywhere?
   - Was planning to NYC
-  - but I guess I am not going now.
-  - And my tournament in Boston
-  - is cancelled too.
+  - but I guess not now.
+  - 'And my tournament in '
+  - Boston is cancelled too.
   - What tournament?
-  - The basketball tournament with other international students
-  - sup
-  - sup
-  msgs2: []
-  msgs3: []
+  - The basketball tournament with
+  - other Chinese students.
+  - Thought I mentioned that?
+  - Oh yes!  You did.
+  - So many things happened lately.
+  - I can't blame you.
+  - Things aren't going well since
+  - the Chinese New Year.
+  - How are you doing?
+  - We have heard several cases
+  - in New York City lately.
+  - Yes.
+  - People aren't cautious,
+  - some thought it's just a flu.
+  - It is going to hurt them soon.
+  - Store some food and supplies
+  - when you can.
+  - How is your roommate?
+  - He left to NJ today.
+  - Oh my!
+  - You must be lonely and bored.
+  - It's fine, I don't talk with him
+  - very often.
+  - And I got tons of projects,
+  - so much "fun".
+  - You need to rest yourself.
+  - Don't worry about it.
+  msgs2:
+  - Where you at?
+  - Back in Jersey now.
+  - Nice
+  - Have a nice break
+  - 'It''s kinda quiet in our '
+  - apartment right now.
+  - Haha don't worry.
+  - I will be back soon.
+  - Yea, stay safe there.
+  msgs3:
+  - 'I have finally '
+  - made it to Toronto!
+  - 'Took me six hours '
+  - to get there..
+  - I am exhausted.
+  - Have a nice trip
+  - But you better not
+  - forget your tasks for
+  - our projects.
+  - 'We might not hit the '
+  - deadline at the end
+  - 'of semester if we '
+  - aren't keeping up.
+  - I will do it when I get back.
+  - Cool.
+  - I really don't enjoy
+  - crunch time work.
+  - It is exhausting.
+  - Working with those
+  - who don't know how
+  - to manage their times
+  - is a disaster.
+  - You did everything
+  - possible but they
+  - could still fail you.
+  - That sucks.
+  - But I can feel them,
+  - everyone has their lives.
+  - I don't blame people
+  - for tough circumstances.
+  - But I don't understand,
+  - I had to get punished
+  - by others' problems.
+  - 'I want to do what I '
+  - want everyday.
+  - 'I want to have some '
+  - moments without
+  - worrying about things.
+  - Right. Don't be stressed.
+  - Everyone has lives.
+  - I don't disagree.
+  - I could be slack off too,
+  - but I chose not to
+  - because it doesn't make
+  - me any better.
+  - I know your life is fun
+  - too, you have your
+  - girlfriend to talk to.
+  - You got your cats to
+  - feed. And you got tons
+  - of video games that
+  - you like to explore.
+  - Others would tell me
+  - 'you slacked off '
+  - 'sometimes. I have '
+  - always believed that
+  - you have your things
+  - to worry about too.
+  - As a friend,
+  - I trusted your words.
+  - 'But we do need to '
+  - stay on the task
+  - for our animation
+  - project.
+  - K.
+  - ....
   leftorright: 0101010001010101010101010100
-  leftorright1: 010000010000000001000101
-  leftorright2: 
-  leftorright3: 
+  leftorright1: 010000010000000001000000010100000001010100000000010101000101000000000100
+  leftorright2: 000100000000010100
+  leftorright3: 010101010100000000000000000100000000000000000000000101010000000000000000000001010000000000000000000000000000000000000000000000000100
 --- !u!1 &1321143973
 GameObject:
   m_ObjectHideFlags: 0
@@ -11336,7 +11439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 30081.326, y: -182.99997}
+  m_AnchoredPosition: {x: 0.000038146973, y: -0.000015258789}
   m_SizeDelta: {x: 193.99963, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1410416933
@@ -13125,6 +13228,7 @@ MonoBehaviour:
   initialmin: 0
   laptoptasks: {fileID: 798848674}
   rest: {fileID: 383075749}
+  agenda: {fileID: 0}
   chapter: 0
 --- !u!1001 &1646907094
 PrefabInstance:
@@ -15172,6 +15276,163 @@ Transform:
   m_Father: {fileID: 823535149}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1861504424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1861504425}
+  - component: {fileID: 1861504427}
+  - component: {fileID: 1861504426}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1861504425
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861504424}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.24011052, y: 0.14242275, z: 0.24011052}
+  m_Children: []
+  m_Father: {fileID: 27614181}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -18.7, y: 35.6}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1861504426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861504424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: bb759545aa1f4f54b8c934083ac1fdf8, type: 2}
+  m_sharedMaterial: {fileID: 4268443549188501303, guid: bb759545aa1f4f54b8c934083ac1fdf8,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 257
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -131.10982, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 1861504426}
+    characterCount: 8
+    spriteCount: 0
+    spaceCount: 1
+    wordCount: 2
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1861504427
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861504424}
+  m_CullTransparentMesh: 0
 --- !u!1 &1866469722
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,6 +54,11 @@ public class Wechat : MonoBehaviour
                 Current_Msg_List = msgs2;
                 Current_LeftorRight_List = leftorright2;
                 break;
+            case 3:
+                maxSize = msgs3.Count;
+                Current_Msg_List = msgs3;
+                Current_LeftorRight_List = leftorright3;
+                break;
         }
     }
 

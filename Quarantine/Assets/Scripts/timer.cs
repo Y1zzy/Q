@@ -51,48 +51,33 @@ public class timer : MonoBehaviour
     void sunlight()
     {
         
-        /*if (minute >= 37 && minute < 39)
+        if (hour >= 8 && hour <12)
         {
             
             daylight.transform.localEulerAngles = new Vector3(20.0f, -218.96f, -156.342f);
-            lightValue.intensity = 1.4f;
-        }
-        if (minute >= 39 && minute < 41)
-        {
-            
-            daylight.transform.localEulerAngles = new Vector3(17.0f, -218.96f, -156.342f);
             lightValue.intensity = 1.2f;
         }
-        if (minute >= 41 && minute < 43)
-        {
-            
-            daylight.transform.localEulerAngles = new Vector3(14.0f, -218.96f, -156.342f);
-            lightValue.intensity = 1.0f;
-        }
-        if (minute >= 43 && minute < 46)
-        {
-            
-            daylight.transform.localEulerAngles = new Vector3(11.0f, -218.96f, -156.342f);
-            lightValue.intensity = 0.8f;
-        }
-        if (minute >= 46 && minute < 47)
+       
+        
+        if (hour >= 12 && hour < 14)
         {
             
             daylight.transform.localEulerAngles = new Vector3(8.0f, -218.96f, -156.342f);
             lightValue.intensity = 0.6f;
         }
-        if (minute >= 47 && minute < 48)
+        if (hour >= 14 && hour < 20)
         {
             
             daylight.transform.localEulerAngles = new Vector3(5.0f, -218.96f, -156.342f);
             lightValue.intensity = 0.4f;
         }
-        if (minute >= 48 && minute < 50)
+        if (hour >= 20 || hour < 8)
         {
             
             daylight.transform.localEulerAngles = new Vector3(0f, -218.96f, -156.342f);
             lightValue.intensity = 0.0f;
-        }*/
+            daylight.SetActive(false);
+        }
 
     }
 }

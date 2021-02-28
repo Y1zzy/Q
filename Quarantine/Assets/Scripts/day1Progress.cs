@@ -14,8 +14,9 @@ public class day1Progress : MonoBehaviour
     public int initialhr = 11, initialmin = 37;
     public laptop laptoptasks;
     public bed rest;
+    public GameObject agenda;
     public int chapter;
-    //bool convoExe;
+    bool dayGoingOn;
     //int convoNumber;
 
     string innerworldtext;
@@ -32,6 +33,7 @@ public class day1Progress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //general statement
         // a check of status and general progress
         workStatus();
@@ -40,20 +42,7 @@ public class day1Progress : MonoBehaviour
         
         if(chapter == 1)
         {
-            /*if(timeManager.hour >= 11 && timeManager.hour <= 12)
-            {
-                convo.convoNum = 0;
-            }
-
-            if (timeManager.hour >= 13 && timeManager.hour <= 17)
-            {
-                convo.convoNum = 1;
-            }
-
-            if (timeManager.hour >= 17 && timeManager.hour <= 19)
-            {
-                convo.convoNum = 2;
-            }*/
+           
             convoTracking();
         }
 
@@ -64,7 +53,7 @@ public class day1Progress : MonoBehaviour
 
     void workStatus()
     {
-        if (timeManager.hoursworked >= 10)
+        if (timeManager.hoursworked >= 6)
         { laptoptasks.abletowork = false; }
         else
         { laptoptasks.abletowork = true; }
@@ -91,14 +80,19 @@ public class day1Progress : MonoBehaviour
             //Debug.Log("may i come here?");
             convo.convoNum = convoNumber;
         }
+
         else
         {
-            //Debug.Log("heloo");
             if (convoNumber == convo.convoNum && convo.convoDone == true)
             {
                 convo.destroy();
                 convo.convoNum += 1;
                 Debug.Log("convoNum plused" + convo.convoNum);
+            }
+
+            else
+            {
+
             }
             
         }
@@ -110,11 +104,17 @@ public class day1Progress : MonoBehaviour
         switch (convo.convoNum)
         {
             case 0:
-                mandatoryConvo(0, 11, 12);
-                //Debug.Log("?");
+                mandatoryConvo(0, 10, 11);
+                
                 break;
             case 1:
-                mandatoryConvo(1, 13, 14);
+                mandatoryConvo(1, 12, 13);
+                break;
+            case 2:
+                mandatoryConvo(2, 14, 15);
+                break;
+            case 3:
+                mandatoryConvo(3, 16, 17);
                 break;
         }
     }
@@ -126,7 +126,7 @@ public class day1Progress : MonoBehaviour
             case 1:
                 month = "Mar";
                 date = 7;
-                //mandatoryConvo(1, 11, 12, 00, 30);
+                
                 break;
             case 2:
                 month = "Mar";
