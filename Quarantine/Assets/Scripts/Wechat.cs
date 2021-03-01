@@ -115,16 +115,7 @@ public class Wechat : MonoBehaviour
 
         
 
-        /*if (Input.GetKeyDown(KeyCode.A)) //this is to destroy
-        {
-            Destroy();
-            index = 0;
-            for(int i = 0; i < scrollRect.content.childCount; i++)
-            {
-                GameObject child = scrollRect.content.GetChild(i).gameObject;
-                Destroy(child);
-            }
-        }*/
+       
     }
     public void destroy()
     {

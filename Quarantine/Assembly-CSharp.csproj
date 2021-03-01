@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\laptop.cs" />
     <Compile Include="Assets\Scripts\lightswitch.cs" />
     <Compile Include="Assets\Scripts\mirror.cs" />
+    <Compile Include="Assets\Scripts\notes.cs" />
     <Compile Include="Assets\Scripts\onHover.cs" />
     <Compile Include="Assets\Scripts\raycasting.cs" />
     <Compile Include="Assets\Scripts\scriptthatworks\look.cs" />

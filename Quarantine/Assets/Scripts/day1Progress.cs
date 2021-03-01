@@ -16,7 +16,14 @@ public class day1Progress : MonoBehaviour
     public bed rest;
     public GameObject agenda;
     public int chapter;
+    public GameObject taskDate;
+    public GameObject task;
+    public GameObject task2;
+    public GameObject task3;
+    public GameObject task4;
     bool dayGoingOn;
+    int sleepTime;
+    
     //int convoNumber;
 
     string innerworldtext;
@@ -104,6 +111,7 @@ public class day1Progress : MonoBehaviour
         switch (convo.convoNum)
         {
             case 0:
+                
                 mandatoryConvo(0, 10, 11);
                 
                 break;
@@ -126,7 +134,12 @@ public class day1Progress : MonoBehaviour
             case 1:
                 month = "Mar";
                 date = 7;
-                
+                sleepTime = 1;
+                taskDate.GetComponent<Text>().text = "03-09";
+                task.GetComponent<Text>().text = "Animation Project";
+                task2.GetComponent<Text>().text = "...";
+                task3.SetActive(false);
+                task4.SetActive(false);
                 break;
             case 2:
                 month = "Mar";
