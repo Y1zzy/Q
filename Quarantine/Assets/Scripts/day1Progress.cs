@@ -21,6 +21,8 @@ public class day1Progress : MonoBehaviour
     public GameObject task2;
     public GameObject task3;
     public GameObject task4;
+    public GameObject chatname;
+    string cN;
     bool dayGoingOn;
     int sleepTime;
     
@@ -33,7 +35,7 @@ public class day1Progress : MonoBehaviour
     {
         
         chapter = 1;
-        //calendar.text = string.Format(month + " . " +  date + "th"  + " 2020");
+        //cN = chatname.GetComponent<Text>().text;
         dateTracking();
     }
 
@@ -84,9 +86,10 @@ public class day1Progress : MonoBehaviour
         Debug.Log(convo.convoNum);
         if (timeManager.hour >= beginninghr && timeManager.hour <= endhr)
         {
-            //Debug.Log("may i come here?");
+           
             convo.convoNum = convoNumber;
         }
+
 
         else
         {
@@ -113,15 +116,22 @@ public class day1Progress : MonoBehaviour
             case 0:
                 
                 mandatoryConvo(0, 10, 11);
-                
+                cN = "Ball is life";
+                chatname.GetComponent<Text>().text = cN;
                 break;
             case 1:
+                cN = "Mother";
+                chatname.GetComponent<Text>().text = cN;
                 mandatoryConvo(1, 12, 13);
                 break;
             case 2:
+                cN = "James H.";
+                chatname.GetComponent<Text>().text = cN;
                 mandatoryConvo(2, 14, 15);
                 break;
             case 3:
+                cN = "Yi N.";
+                chatname.GetComponent<Text>().text = cN;
                 mandatoryConvo(3, 16, 17);
                 break;
         }
