@@ -101,6 +101,18 @@ public class actions : MonoBehaviour
                 StartCoroutine("WaitForSec");
             }
         }
+
+        if (whatISee == "stove")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                innerworldtext = "Restaurants are closing...";
+                innerworld.GetComponent<Text>().text = innerworldtext;
+                innerworld.SetActive(true);
+                StartCoroutine("WaitForSec");
+            }
+        }
         if (whatISee == "msi")
         {
             if (Input.GetKeyDown(KeyCode.E))

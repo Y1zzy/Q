@@ -15,7 +15,7 @@ public class timer : MonoBehaviour
     public GameObject daylight;
     public Light lightValue;
     public float angle;
-    public int hoursworked,hoursrested;
+    public int hoursworked,hoursrested,hourseat;
     
     //public int taskhr, taskmin, tasksecond;
     

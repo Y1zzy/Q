@@ -12187,6 +12187,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: stove
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 04a05da7fcb1dec4e9d60ed2f7755e0b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 04a05da7fcb1dec4e9d60ed2f7755e0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913437517874460412, guid: 04a05da7fcb1dec4e9d60ed2f7755e0b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913437517874460412, guid: 04a05da7fcb1dec4e9d60ed2f7755e0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913437517874460412, guid: 04a05da7fcb1dec4e9d60ed2f7755e0b,
+        type: 3}
+      propertyPath: m_Name
+      value: stove
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04a05da7fcb1dec4e9d60ed2f7755e0b, type: 3}
 --- !u!1001 &1472488008
