@@ -12,7 +12,7 @@ public class stove : MonoBehaviour
     void Start()
     {
         hourscooked = 1;
-        hungry = true;
+        //hungry = true;
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class stove : MonoBehaviour
 
     public void mealTime()
     {
-        time.hoursrested += 1;
+        time.hourseat += 1;
         time.initialhr += 1;
 
     }

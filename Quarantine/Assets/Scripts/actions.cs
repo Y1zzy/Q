@@ -27,7 +27,7 @@ public class actions : MonoBehaviour
     string innerworldtext;
     string controlguides;
     public GameObject control;
-    //TextMesh controltext;
+    public stove meal;
     private bool doorIsOpen, door2IsOpen;
     private string interactableObj;
     void start()
@@ -106,11 +106,18 @@ public class actions : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                if (meal.hungry == false)
+                {
+                    innerworldtext = "Restaurants are closing...so as the market";
+                    innerworld.GetComponent<Text>().text = innerworldtext;
+                    innerworld.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                }
 
-                innerworldtext = "Restaurants are closing...";
-                innerworld.GetComponent<Text>().text = innerworldtext;
-                innerworld.SetActive(true);
-                StartCoroutine("WaitForSec");
+                else
+                {
+                    meal.mealTime();
+                }
             }
         }
         if (whatISee == "msi")

@@ -40,6 +40,7 @@ public class timer : MonoBehaviour
         hour = initialhr + (int)(startTime / 3600) % 24;
         if (hour > 24)
         {
+
             hour -= 24;
         }
         timeText.text = string.Format("{0:0}:{1:00}:{2:00}",hour,minute,second);

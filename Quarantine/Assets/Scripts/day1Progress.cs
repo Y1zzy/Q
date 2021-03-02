@@ -22,6 +22,7 @@ public class day1Progress : MonoBehaviour
     public GameObject task3;
     public GameObject task4;
     public GameObject chatname;
+    public stove meal;
     string cN;
     bool dayGoingOn;
     int sleepTime;
@@ -47,6 +48,7 @@ public class day1Progress : MonoBehaviour
         // a check of status and general progress
         workStatus();
         restStatus();
+        hungerStatus();
         //Debug.Log(timeManager.hour);
         
         if(chapter == 1)
@@ -58,6 +60,17 @@ public class day1Progress : MonoBehaviour
 
         
         
+    }
+
+    void hungerStatus()
+    {
+        if (timeManager.hour == 12 || timeManager.hour ==18)
+        {
+            meal.hungry = true;
+        }
+       
+        else
+        { meal.hungry = false; }
     }
 
     void workStatus()
