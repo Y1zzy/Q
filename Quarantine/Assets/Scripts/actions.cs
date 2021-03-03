@@ -28,6 +28,7 @@ public class actions : MonoBehaviour
     string controlguides;
     public GameObject control;
     public stove meal;
+    public book book;
     private bool doorIsOpen, door2IsOpen;
     private string interactableObj;
     void start()
@@ -87,6 +88,32 @@ public class actions : MonoBehaviour
                 innerworld.GetComponent<Text>().text = innerworldtext;
                 innerworld.SetActive(true);
                 StartCoroutine("WaitForSec");
+            }
+        }
+
+        if (whatISee == "Mamba")
+        {
+            Debug.Log("book.read" + book.readable);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                if (book.readable == false)
+                {
+                    innerworldtext = "I think I have read enough...need to get back on track";
+                    innerworld.GetComponent<Text>().text = innerworldtext;
+                    innerworld.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                }
+
+                else
+                {
+                    Debug.Log("?");
+                    book.readTime();
+                    innerworldtext = book.kobe;
+                    innerworld.GetComponent<Text>().text = innerworldtext;
+                    innerworld.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                }
             }
         }
 

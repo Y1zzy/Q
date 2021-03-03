@@ -15,7 +15,7 @@ public class timer : MonoBehaviour
     public GameObject daylight;
     public Light lightValue;
     public float angle;
-    public int hoursworked,hoursrested,hourseat;
+    public int hoursworked,hoursrested,hourseat,hoursread;
     
     //public int taskhr, taskmin, tasksecond;
     
@@ -51,12 +51,17 @@ public class timer : MonoBehaviour
 
     void sunlight()
     {
-        
+        // 0 - 4 night
+        // 5 - 10 morning
+        // 11 - 14 noon
+        // 15 - 17 afternoon
+        // 18 - 23 evening
         if (hour >= 8 && hour <12)
         {
             
             daylight.transform.localEulerAngles = new Vector3(23.2f, -218.96f, -156.342f);
             lightValue.intensity = 1.2f;
+            RenderSettings.ambientLight = new Color(27 / 255f, 34 / 255f, 46 / 255f, 0 / 255f);
         }
        
         
@@ -65,17 +70,20 @@ public class timer : MonoBehaviour
             
             daylight.transform.localEulerAngles = new Vector3(16.0f, -203f, -151f);
             lightValue.intensity = 0.6f;
+            RenderSettings.ambientLight = new Color(0 / 255f, 0 / 255f, 46 / 255f, 0 / 255f);
         }
         if (hour >= 14 && hour < 20)
         {
             
             daylight.transform.localEulerAngles = new Vector3(5.0f, -185f, -145f);
             lightValue.intensity = 0.4f;
+            RenderSettings.ambientLight = new Color(60 / 255f, 40 / 255f, 0 / 255f, 0 / 255f);
         }
         if (hour >= 20 || hour < 8)
         {
             
             daylight.transform.localEulerAngles = new Vector3(-7f, -165f, -140f);
+            RenderSettings.ambientLight = new Color(0 / 255f, 0 / 255f, 0 / 255f, 0 / 255f);
             lightValue.intensity = 0.0f;
             daylight.SetActive(false);
         }

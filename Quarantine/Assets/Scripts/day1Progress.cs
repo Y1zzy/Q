@@ -23,6 +23,7 @@ public class day1Progress : MonoBehaviour
     public GameObject task4;
     public GameObject chatname;
     public stove meal;
+    public book book;
     string cN;
     bool dayGoingOn;
     int sleepTime;
@@ -49,6 +50,7 @@ public class day1Progress : MonoBehaviour
         workStatus();
         restStatus();
         hungerStatus();
+        readStatus();
         //Debug.Log(timeManager.hour);
         
         if(chapter == 1)
@@ -81,6 +83,14 @@ public class day1Progress : MonoBehaviour
         { laptoptasks.abletowork = true; }
     }
 
+    void readStatus()
+    {
+        if (timeManager.hoursread >= 2)
+        { book.readable = false; }
+        else
+        { book.readable = true; }
+    }
+
     void restStatus()
     {
         if (timeManager.hoursrested >= 2 || timeManager.hoursworked <=4)
@@ -96,7 +106,7 @@ public class day1Progress : MonoBehaviour
     void mandatoryConvo(int convoNumber, int beginninghr, int endhr)
     {
        
-        Debug.Log(convo.convoNum);
+        //Debug.Log(convo.convoNum);
         if (timeManager.hour >= beginninghr && timeManager.hour <= endhr)
         {
            

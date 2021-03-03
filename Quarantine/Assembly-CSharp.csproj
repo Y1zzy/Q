@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Wechat.cs" />
     <Compile Include="Assets\Scripts\actions.cs" />
     <Compile Include="Assets\Scripts\bed.cs" />
+    <Compile Include="Assets\Scripts\book.cs" />
     <Compile Include="Assets\Scripts\day1Progress.cs" />
     <Compile Include="Assets\Scripts\device.cs" />
     <Compile Include="Assets\Scripts\dialogue.cs" />
