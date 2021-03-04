@@ -27,6 +27,7 @@ public class day1Progress : MonoBehaviour
     string cN;
     bool dayGoingOn;
     int sleepTime;
+
     
     //int convoNumber;
 
@@ -77,7 +78,7 @@ public class day1Progress : MonoBehaviour
 
     void workStatus()
     {
-        if (timeManager.hoursworked >= 6)
+        if (timeManager.hoursworked >= 10)
         { laptoptasks.abletowork = false; }
         else
         { laptoptasks.abletowork = true; }
@@ -93,11 +94,21 @@ public class day1Progress : MonoBehaviour
 
     void restStatus()
     {
+        
         if (timeManager.hoursrested >= 2 || timeManager.hoursworked <=4)
         {
             rest.sleepOrNot = false;
         }
+
         else
+        {
+            rest.sleepOrNot = true;
+        }
+    }
+
+    void mustSleep()
+    {
+        if(timeManager.hour >= sleepTime && timeManager.hour < sleepTime+4)
         {
             rest.sleepOrNot = true;
         }
@@ -168,7 +179,8 @@ public class day1Progress : MonoBehaviour
                 month = "Mar";
                 date = 7;
                 sleepTime = 1;
-                taskDate.GetComponent<Text>().text = "03-09";
+                
+                taskDate.GetComponent<Text>().text = "03-07";
                 task.GetComponent<Text>().text = "Animation Project";
                 task2.GetComponent<Text>().text = "...";
                 task3.SetActive(false);

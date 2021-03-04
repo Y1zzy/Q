@@ -93,7 +93,7 @@ public class actions : MonoBehaviour
 
         if (whatISee == "Mamba")
         {
-            Debug.Log("book.read" + book.readable);
+            //Debug.Log("book.read" + book.readable);
             if (Input.GetKeyDown(KeyCode.E))
             {
 
