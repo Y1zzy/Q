@@ -8,6 +8,8 @@ public class bed : MonoBehaviour
     public timer time;
     //public int hoursRested;
     public bool sleepOrNot;
+    public int bedTimehr, bedTimeMin;
+    public bool toTheNextDay;
     // Start is called before the first frame update
     void Start()
     {

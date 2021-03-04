@@ -33,7 +33,7 @@ public class Wechat : MonoBehaviour
 
     public void MIAOUPDATEUPDATE()// call when time changes!!!!
     {
-        Debug.Log(convoNum);
+        //bug.Log(convoNum);
         switch (convoNum)
         {
             case 0:
@@ -42,7 +42,10 @@ public class Wechat : MonoBehaviour
                 Current_LeftorRight_List = leftorright;
                 break;
             case 1:
+                //Debug.Log("maxsize " + maxSize);
+               
                 maxSize = msgs1.Count;
+                //Debug.Log("I am here" + maxSize);
                 Current_Msg_List = msgs1;
                 Current_LeftorRight_List = leftorright1;
                 break;
@@ -50,6 +53,11 @@ public class Wechat : MonoBehaviour
                 maxSize = msgs2.Count;
                 Current_Msg_List = msgs2;
                 Current_LeftorRight_List = leftorright2;
+                break;
+            case 3:
+                maxSize = msgs3.Count;
+                Current_Msg_List = msgs3;
+                Current_LeftorRight_List = leftorright3;
                 break;
         }
     }
@@ -68,6 +76,7 @@ public class Wechat : MonoBehaviour
             {
             if (index < maxSize)
             {
+                convoDone = false;
                 GameObject msg = Instantiate(msgPrefab, scrollRect.content);
                 GameObject child = msg.transform.GetChild(0).gameObject;
                 GameObject child1 = msg.transform.GetChild(1).gameObject;
@@ -95,25 +104,26 @@ public class Wechat : MonoBehaviour
             if (index == maxSize)
             {
                 convoDone = true;
-
-
                 innerworldtext = "That's it for the conversation.";
                 innerworld.GetComponent<Text>().text = innerworldtext;
                 innerworld.SetActive(true);
                 StartCoroutine("WaitForSec");
+                //nvoNum += 1;  
+                //destroy();
             }
         }
 
         
 
-        if (Input.GetKeyDown(KeyCode.A)) //this is to destroy
+       
+    }
+    public void destroy()
+    {
+        index = 0;
+        for (int i = 0; i < scrollRect.content.childCount; i++)
         {
-            index = 0;
-            for(int i = 0; i < scrollRect.content.childCount; i++)
-            {
-                GameObject child = scrollRect.content.GetChild(i).gameObject;
-                Destroy(child);
-            }
+            GameObject child = scrollRect.content.GetChild(i).gameObject;
+            Destroy(child);
         }
     }
 
@@ -121,6 +131,6 @@ public class Wechat : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         innerworld.SetActive(false);
-
+        //destroy();
     }
 }

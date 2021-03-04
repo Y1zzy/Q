@@ -14,7 +14,22 @@ public class day1Progress : MonoBehaviour
     public int initialhr = 11, initialmin = 37;
     public laptop laptoptasks;
     public bed rest;
+    public GameObject agenda;
     public int chapter;
+    public GameObject taskDate;
+    public GameObject task;
+    public GameObject task2;
+    public GameObject task3;
+    public GameObject task4;
+    public GameObject chatname;
+    public stove meal;
+    public book book;
+    string cN;
+    bool dayGoingOn;
+    int sleepTime;
+
+    
+    //int convoNumber;
 
     string innerworldtext;
 
@@ -23,41 +38,42 @@ public class day1Progress : MonoBehaviour
     {
         
         chapter = 1;
-        //calendar.text = string.Format(month + " . " +  date + "th"  + " 2020");
+        //cN = chatname.GetComponent<Text>().text;
         dateTracking();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         //general statement
         // a check of status and general progress
         workStatus();
         restStatus();
+        hungerStatus();
+        readStatus();
         //Debug.Log(timeManager.hour);
         
         if(chapter == 1)
         {
-            if(timeManager.hour >= 11 && timeManager.hour <= 12)
-            {
-                convo.convoNum = 0;
-            }
-
-            if (timeManager.hour >= 13 && timeManager.hour <= 17)
-            {
-                convo.convoNum = 1;
-            }
-
-            if (timeManager.hour >= 17 && timeManager.hour <= 19)
-            {
-                convo.convoNum = 2;
-            }
-            //mandatoryConvo(1,11,12);
+           
+            convoTracking();
         }
 
 
         
         
+    }
+
+    void hungerStatus()
+    {
+        if (timeManager.hour == 12 || timeManager.hour ==18)
+        {
+            meal.hungry = true;
+        }
+       
+        else
+        { meal.hungry = false; }
     }
 
     void workStatus()
@@ -68,30 +84,91 @@ public class day1Progress : MonoBehaviour
         { laptoptasks.abletowork = true; }
     }
 
+    void readStatus()
+    {
+        if (timeManager.hoursread >= 2)
+        { book.readable = false; }
+        else
+        { book.readable = true; }
+    }
+
     void restStatus()
     {
+        
         if (timeManager.hoursrested >= 2 || timeManager.hoursworked <=4)
         {
             rest.sleepOrNot = false;
         }
+
         else
         {
             rest.sleepOrNot = true;
         }
     }
 
-    /*void mandatoryConvo(int convoNumber, int beginninghr, int endhr)
+    void mustSleep()
     {
-       // Debug.Log(timeManager.hour);
-        if(timeManager.hour >=beginninghr || timeManager.hour <= endhr)
+        if(timeManager.hour >= sleepTime && timeManager.hour < sleepTime+4)
         {
+            rest.sleepOrNot = true;
+        }
+    }
+
+    void mandatoryConvo(int convoNumber, int beginninghr, int endhr)
+    {
+       
+        //Debug.Log(convo.convoNum);
+        if (timeManager.hour >= beginninghr && timeManager.hour <= endhr)
+        {
+           
             convo.convoNum = convoNumber;
         }
-    }*/
 
-    void chatTracking()
+
+        else
+        {
+            if (convoNumber == convo.convoNum && convo.convoDone == true)
+            {
+                convo.destroy();
+                convo.convoNum += 1;
+                Debug.Log("convoNum plused" + convo.convoNum);
+            }
+
+            else
+            {
+
+            }
+            
+        }
+       
+    }
+
+    public void convoTracking()
     {
-        
+        switch (convo.convoNum)
+        {
+            case 0:
+                
+                mandatoryConvo(0, 10, 11);
+                cN = "Ball is life";
+                chatname.GetComponent<Text>().text = cN;
+                break;
+            case 1:
+                cN = "Mother";
+                chatname.GetComponent<Text>().text = cN;
+                mandatoryConvo(1, 12, 13);
+                break;
+            case 2:
+                cN = "James H.";
+                chatname.GetComponent<Text>().text = cN;
+                mandatoryConvo(2, 14, 15);
+                break;
+            case 3:
+                cN = "Yi N.";
+                chatname.GetComponent<Text>().text = cN;
+                mandatoryConvo(3, 16, 17);
+                break;
+        }
     }
 
     public void dateTracking()// call when time changes!!!!
@@ -101,7 +178,13 @@ public class day1Progress : MonoBehaviour
             case 1:
                 month = "Mar";
                 date = 7;
-                //mandatoryConvo(1, 11, 12, 00, 30);
+                sleepTime = 1;
+                
+                taskDate.GetComponent<Text>().text = "03-07";
+                task.GetComponent<Text>().text = "Animation Project";
+                task2.GetComponent<Text>().text = "...";
+                task3.SetActive(false);
+                task4.SetActive(false);
                 break;
             case 2:
                 month = "Mar";

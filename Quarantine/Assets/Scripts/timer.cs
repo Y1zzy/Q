@@ -15,7 +15,8 @@ public class timer : MonoBehaviour
     public GameObject daylight;
     public Light lightValue;
     public float angle;
-    public int hoursworked,hoursrested;
+    public int hoursworked,hoursrested,hourseat,hoursread;
+    day1Progress day;
     
     //public int taskhr, taskmin, tasksecond;
     
@@ -40,7 +41,9 @@ public class timer : MonoBehaviour
         hour = initialhr + (int)(startTime / 3600) % 24;
         if (hour > 24)
         {
+
             hour -= 24;
+            day.chapter += 1;
         }
         timeText.text = string.Format("{0:0}:{1:00}:{2:00}",hour,minute,second);
         
@@ -50,49 +53,43 @@ public class timer : MonoBehaviour
 
     void sunlight()
     {
-        
-        /*if (minute >= 37 && minute < 39)
+        // 0 - 4 night
+        // 5 - 10 morning
+        // 11 - 14 noon
+        // 15 - 17 afternoon
+        // 18 - 23 evening
+        if (hour >= 8 && hour <12)
         {
             
-            daylight.transform.localEulerAngles = new Vector3(20.0f, -218.96f, -156.342f);
-            lightValue.intensity = 1.4f;
-        }
-        if (minute >= 39 && minute < 41)
-        {
-            
-            daylight.transform.localEulerAngles = new Vector3(17.0f, -218.96f, -156.342f);
+            daylight.transform.localEulerAngles = new Vector3(23.2f, -218.96f, -156.342f);
             lightValue.intensity = 1.2f;
+            RenderSettings.ambientLight = new Color(255 / 255f, 250 / 255f, 199 / 255f, 0 / 255f);
         }
-        if (minute >= 41 && minute < 43)
+       
+        
+        if (hour >= 12 && hour < 14)
         {
             
-            daylight.transform.localEulerAngles = new Vector3(14.0f, -218.96f, -156.342f);
-            lightValue.intensity = 1.0f;
+            daylight.transform.localEulerAngles = new Vector3(16.0f, -203f, -151f);
+            lightValue.intensity = 1.2f;
+            RenderSettings.ambientLight = new Color(255 / 255f, 255 / 255f, 255 / 255f, 0 / 255f);
         }
-        if (minute >= 43 && minute < 46)
+        if (hour >= 14 && hour < 18)
         {
             
-            daylight.transform.localEulerAngles = new Vector3(11.0f, -218.96f, -156.342f);
-            lightValue.intensity = 0.8f;
-        }
-        if (minute >= 46 && minute < 47)
-        {
-            
-            daylight.transform.localEulerAngles = new Vector3(8.0f, -218.96f, -156.342f);
-            lightValue.intensity = 0.6f;
-        }
-        if (minute >= 47 && minute < 48)
-        {
-            
-            daylight.transform.localEulerAngles = new Vector3(5.0f, -218.96f, -156.342f);
+            daylight.transform.localEulerAngles = new Vector3(5.0f, -185f, -145f);
             lightValue.intensity = 0.4f;
+            daylight.SetActive(false);
+            RenderSettings.ambientLight = new Color(270 / 255f, 170 / 255f, 110 / 255f, 0 / 255f);
         }
-        if (minute >= 48 && minute < 50)
+        if (hour >= 18 || hour < 8)
         {
             
-            daylight.transform.localEulerAngles = new Vector3(0f, -218.96f, -156.342f);
+            daylight.transform.localEulerAngles = new Vector3(-7f, -165f, -140f);
+            RenderSettings.ambientLight = new Color(0 / 255f, 0 / 255f, 0 / 255f, 0 / 255f);
             lightValue.intensity = 0.0f;
-        }*/
+            daylight.SetActive(false);
+        }
 
     }
 }

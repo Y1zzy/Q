@@ -27,7 +27,8 @@ public class actions : MonoBehaviour
     string innerworldtext;
     string controlguides;
     public GameObject control;
-    //TextMesh controltext;
+    public stove meal;
+    public book book;
     private bool doorIsOpen, door2IsOpen;
     private string interactableObj;
     void start()
@@ -90,6 +91,32 @@ public class actions : MonoBehaviour
             }
         }
 
+        if (whatISee == "Mamba")
+        {
+            //Debug.Log("book.read" + book.readable);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                if (book.readable == false)
+                {
+                    innerworldtext = "I think I have read enough...need to get back on track";
+                    innerworld.GetComponent<Text>().text = innerworldtext;
+                    innerworld.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                }
+
+                else
+                {
+                    Debug.Log("?");
+                    book.readTime();
+                    innerworldtext = book.kobe;
+                    innerworld.GetComponent<Text>().text = innerworldtext;
+                    innerworld.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                }
+            }
+        }
+
         if (whatISee == "fridge")
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -99,6 +126,25 @@ public class actions : MonoBehaviour
                 innerworld.GetComponent<Text>().text = innerworldtext;
                 innerworld.SetActive(true);
                 StartCoroutine("WaitForSec");
+            }
+        }
+
+        if (whatISee == "stove")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (meal.hungry == false)
+                {
+                    innerworldtext = "Restaurants are closing...so as the market";
+                    innerworld.GetComponent<Text>().text = innerworldtext;
+                    innerworld.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                }
+
+                else
+                {
+                    meal.mealTime();
+                }
             }
         }
         if (whatISee == "msi")
