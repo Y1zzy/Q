@@ -17,11 +17,19 @@ public class Wechat : MonoBehaviour
     public List<string> msgs1 = new List<string>();
     public List<string> msgs2 = new List<string>();
     public List<string> msgs3 = new List<string>();
+    public List<string> msgs4 = new List<string>();
+    public List<string> msgs5 = new List<string>();
+    public List<string> msgs6 = new List<string>();
+    public List<string> msgs7 = new List<string>();
 
     public List<bool> leftorright = new List<bool>();
     public List<bool> leftorright1 = new List<bool>();
     public List<bool> leftorright2 = new List<bool>();
     public List<bool> leftorright3 = new List<bool>();
+    public List<bool> leftorright4 = new List<bool>();
+    public List<bool> leftorright5 = new List<bool>();
+    public List<bool> leftorright6 = new List<bool>();
+    public List<bool> leftorright7 = new List<bool>();
 
     private List<string> Current_Msg_List = new List<string>();
     private List<bool> Current_LeftorRight_List = new List<bool>();

@@ -24,11 +24,12 @@ public class day1Progress : MonoBehaviour
     public GameObject chatname;
     public stove meal;
     public book book;
+    
     string cN;
     bool dayGoingOn;
     int sleepTime;
-
-    
+    public fade fading;
+    public GameObject panel;
     //int convoNumber;
 
     string innerworldtext;
@@ -36,7 +37,8 @@ public class day1Progress : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        panel.SetActive(true);
+        fading.FadeOut();
         chapter = 1;
         //cN = chatname.GetComponent<Text>().text;
         dateTracking();
@@ -45,10 +47,11 @@ public class day1Progress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        dateTracking();
         //general statement
         // a check of status and general progress
         workStatus();
+        mustSleep();
         restStatus();
         hungerStatus();
         readStatus();
@@ -97,7 +100,10 @@ public class day1Progress : MonoBehaviour
         
         if (timeManager.hoursrested >= 2 || timeManager.hoursworked <=4)
         {
-            rest.sleepOrNot = false;
+            if (sleepTime - timeManager.hour <= 3)
+            {
+                rest.sleepOrNot = false;
+            }
         }
 
         else
@@ -110,6 +116,8 @@ public class day1Progress : MonoBehaviour
     {
         if(timeManager.hour >= sleepTime && timeManager.hour < sleepTime+4)
         {
+            
+            //set this into sleep
             rest.sleepOrNot = true;
         }
     }
@@ -189,6 +197,7 @@ public class day1Progress : MonoBehaviour
             case 2:
                 month = "Mar";
                 date = 8;
+                taskDate.GetComponent<Text>().text = "03-08";
 
                 break;
             case 3:

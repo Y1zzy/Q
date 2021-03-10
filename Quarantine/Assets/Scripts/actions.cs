@@ -12,6 +12,7 @@ public class actions : MonoBehaviour
     //[HideInInspector]
     //public raycasting raycastobj;
     public GameObject laptopScene;
+    public fade fading;
     //public bool onBed;
 
     public player onBedStatus;
@@ -112,6 +113,7 @@ public class actions : MonoBehaviour
                     innerworldtext = book.kobe;
                     innerworld.GetComponent<Text>().text = innerworldtext;
                     innerworld.SetActive(true);
+                    fading.FadeIn();
                     StartCoroutine("WaitForSec");
                 }
             }
@@ -181,7 +183,11 @@ public class actions : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (bed.sleepOrNot == true)
-                { bed.bedTime(); }
+                { bed.bedTime();
+                    fading.FadeIn();
+                    StartCoroutine("WaitForSec");
+
+                }
                 else
                 {
                     innerworldtext = "I am not too tired, I don't want to waste my time.";
@@ -332,6 +338,7 @@ public class actions : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             innerworld.SetActive(false);
+            fading.FadeOut();
             //closing = false;
         }
 }

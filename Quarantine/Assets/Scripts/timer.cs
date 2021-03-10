@@ -16,7 +16,7 @@ public class timer : MonoBehaviour
     public Light lightValue;
     public float angle;
     public int hoursworked,hoursrested,hourseat,hoursread;
-    day1Progress day;
+    public day1Progress day;
     
     //public int taskhr, taskmin, tasksecond;
     
@@ -43,7 +43,8 @@ public class timer : MonoBehaviour
         {
 
             hour -= 24;
-            day.chapter += 1;
+            day.date += 1;
+            //Debug.Log("dyae: " + day.date);
         }
         timeText.text = string.Format("{0:0}:{1:00}:{2:00}",hour,minute,second);
         
@@ -67,21 +68,14 @@ public class timer : MonoBehaviour
         }
        
         
-        if (hour >= 12 && hour < 14)
+        if (hour >= 12 && hour < 18)
         {
             
             daylight.transform.localEulerAngles = new Vector3(16.0f, -203f, -151f);
             lightValue.intensity = 1.2f;
             RenderSettings.ambientLight = new Color(255 / 255f, 255 / 255f, 255 / 255f, 0 / 255f);
         }
-        if (hour >= 14 && hour < 18)
-        {
-            
-            daylight.transform.localEulerAngles = new Vector3(5.0f, -185f, -145f);
-            lightValue.intensity = 0.4f;
-            daylight.SetActive(false);
-            RenderSettings.ambientLight = new Color(270 / 255f, 170 / 255f, 110 / 255f, 0 / 255f);
-        }
+        
         if (hour >= 18 || hour < 8)
         {
             

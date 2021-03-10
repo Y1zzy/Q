@@ -40,7 +40,11 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
         Time.hoursworked += customizedHour;
         Time.hoursrested -= customizedHour/2;
         screen.laptopOpen = false;
-        //Debug.Log(Time.initialhr + " and " + Time.hoursworked + "workable");
+        fading.FadeIn();
+        Debug.Log("? go through here");
+        fading.FadeOut();
+        //StartCoroutine("WaitForSec");
+        Debug.Log("how about here");
 
 
     }
@@ -49,6 +53,13 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
     {
         logoText.SetActive(false);
     }
-    
-    
+
+    IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(1);
+        Debug.Log("here?");
+        fading.FadeOut();
+        //canvas.SetActive(false);
+    }
+
 }
