@@ -68,6 +68,8 @@ public class day1Progress : MonoBehaviour
         
     }
 
+    
+
     void hungerStatus()
     {
         if (timeManager.hour == 12 || timeManager.hour ==18)
@@ -114,12 +116,25 @@ public class day1Progress : MonoBehaviour
 
     void mustSleep()
     {
-        if(timeManager.hour >= sleepTime && timeManager.hour < sleepTime+4)
+        if(timeManager.hour > (sleepTime - 1) && timeManager.hour < (sleepTime + 5))
         {
             
             //set this into sleep
             rest.sleepOrNot = true;
+            if (timeManager.hour >= (sleepTime + 1) && timeManager.hour < (sleepTime + 4))
+            {
+                fading.FadeIn();
+                chapter += 1;
+                clearout();
+            }
         }
+    }
+
+    void clearout()
+    {
+        timeManager.hoursrested = 0;
+        timeManager.hoursworked = 0;
+        timeManager.hoursread = 0;
     }
 
     void mandatoryConvo(int convoNumber, int beginninghr, int endhr)
@@ -187,6 +202,8 @@ public class day1Progress : MonoBehaviour
                 month = "Mar";
                 date = 7;
                 sleepTime = 1;
+                //timeManager.initialhr = 11;
+                //timeManager.initialmin = 37;
                 
                 taskDate.GetComponent<Text>().text = "03-07";
                 task.GetComponent<Text>().text = "Animation Project";
@@ -197,8 +214,14 @@ public class day1Progress : MonoBehaviour
             case 2:
                 month = "Mar";
                 date = 8;
+                sleepTime = 1;
+                timeManager.initialhr = 10;
+                timeManager.initialmin = 25;
                 taskDate.GetComponent<Text>().text = "03-08";
-
+                task.GetComponent<Text>().text = "Animation Project";
+                task2.GetComponent<Text>().text = "Game Project";
+                task3.SetActive(false);
+                task4.SetActive(false);
                 break;
             case 3:
                 month = "Mar";

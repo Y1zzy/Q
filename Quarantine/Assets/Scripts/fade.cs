@@ -13,14 +13,14 @@ public class fade : MonoBehaviour
     {
         //canvas.SetActive(true);
         StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 1));
-        Debug.Log("fadeIn");
+        //Debug.Log("fadeIn");
     }
 
     public void FadeOut()
     {
         //canvas.SetActive(true);
         StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 0));
-        Debug.Log("fadeout");
+       // Debug.Log("fadeout");
         //StartCoroutine("WaitForSec");
     }
 

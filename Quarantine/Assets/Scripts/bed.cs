@@ -10,10 +10,12 @@ public class bed : MonoBehaviour
     public bool sleepOrNot;
     public int bedTimehr, bedTimeMin;
     public bool toTheNextDay;
+    public bool mustSleep;
     // Start is called before the first frame update
     void Start()
     {
         sleepOrNot = false;
+        mustSleep = false;
     }
 
     // Update is called once per frame
@@ -41,4 +43,6 @@ public class bed : MonoBehaviour
         time.initialhr += 1;
         
     }
+
+    
 }

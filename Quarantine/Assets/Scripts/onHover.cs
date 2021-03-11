@@ -17,14 +17,25 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
     //private string done;
     public string accomplishedtext;
     public fade fading;
+    public bool  donefading;
     //string done;
     // Start is called before the first frame update
     void Start()
     {
         logoText.SetActive(false);
-        
+        //donefading = true;
         
       
+    }
+
+    void Update()
+    {
+        //Debug.Log("this is from update");
+       /* if (donefading == false)
+        {
+            Debug.Log("this is from update");
+            StartCoroutine("WaitForSec");
+        }*/
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -40,11 +51,12 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
         Time.hoursworked += customizedHour;
         Time.hoursrested -= customizedHour/2;
         screen.laptopOpen = false;
-        fading.FadeIn();
+        //fading.FadeIn();    //you can't call coroutine in onpointerdown
         Debug.Log("? go through here");
-        fading.FadeOut();
-        //StartCoroutine("WaitForSec");
-        Debug.Log("how about here");
+        //donefading = false;
+        //fading.FadeOut();
+        this.StartCoroutine(this.WaitForSec());
+        Debug.Log(donefading);
 
 
     }
@@ -56,10 +68,14 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
 
     IEnumerator WaitForSec()
     {
+        Debug.Log("sup");
+        
         yield return new WaitForSeconds(1);
-        Debug.Log("here?");
+        Debug.Log("supsupsupsup");
+        //innerworld.SetActive(false);
         fading.FadeOut();
-        //canvas.SetActive(false);
+        donefading = true;
+        //closing = false;
     }
 
 }
