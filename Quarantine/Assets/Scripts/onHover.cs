@@ -50,12 +50,12 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
         Time.initialhr += customizedHour;
         Time.hoursworked += customizedHour;
         Time.hoursrested -= customizedHour/2;
-        screen.laptopOpen = false;
-        //fading.FadeIn();    //you can't call coroutine in onpointerdown
+        screen.laptopworked = true;
+        fading.FadeIn();    //you can't call coroutine in onpointerdown
         Debug.Log("? go through here");
         //donefading = false;
         //fading.FadeOut();
-        this.StartCoroutine(this.WaitForSec());
+        StartCoroutine(WaitForSec());
         Debug.Log(donefading);
 
 
@@ -69,12 +69,13 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
     IEnumerator WaitForSec()
     {
         Debug.Log("sup");
-        
+        //fading.FadeIn();
         yield return new WaitForSeconds(1);
         Debug.Log("supsupsupsup");
         //innerworld.SetActive(false);
         fading.FadeOut();
         donefading = true;
+        screen.laptopOpen = false;
         //closing = false;
     }
 
