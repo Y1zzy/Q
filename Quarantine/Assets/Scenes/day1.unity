@@ -3653,6 +3653,7 @@ MonoBehaviour:
   hungry: 0
   hourscooked: 1
   time: {fileID: 1784519422}
+  mealcooked: 0
 --- !u!1 &398963289
 GameObject:
   m_ObjectHideFlags: 0
@@ -10682,6 +10683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 1784519422}
   readable: 0
+  bookread: 0
   day: {fileID: 1642346797}
   kobe: 
 --- !u!1001 &1223887836

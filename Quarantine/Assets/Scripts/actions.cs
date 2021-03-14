@@ -108,7 +108,6 @@ public class actions : MonoBehaviour
 
                 else
                 {
-                    
                     book.readTime();
                     book.differentdaydifferentquote();
                     //Debug.Log("book" + book.kobe + "inner" + innerworldtext);

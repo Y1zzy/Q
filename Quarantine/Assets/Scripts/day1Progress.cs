@@ -56,10 +56,12 @@ public class day1Progress : MonoBehaviour
         hungerStatus();
         readStatus();
         //Debug.Log(timeManager.hour);
-        
+
+        convoTracking();
         if(chapter == 1)
         {
-            convoTracking();
+            day1();
+            //convoTracking();
         }
 
     }
@@ -159,24 +161,24 @@ public class day1Progress : MonoBehaviour
         switch (convo.convoNum)
         {
             case 0:
-                mandatoryConvo(0, 10, 11);
+                //mandatoryConvo(0, 10, 11);
                 cN = "Ball is life";
                 chatname.GetComponent<Text>().text = cN;
                 break;
             case 1:
                 cN = "Mother";
                 chatname.GetComponent<Text>().text = cN;
-                mandatoryConvo(1, 12, 13);
+                //mandatoryConvo(1, 12, 13);
                 break;
             case 2:
                 cN = "James H.";
                 chatname.GetComponent<Text>().text = cN;
-                mandatoryConvo(2, 14, 15);
+                //mandatoryConvo(2, 14, 15);
                 break;
             case 3:
                 cN = "Yi N.";
                 chatname.GetComponent<Text>().text = cN;
-                mandatoryConvo(3, 16, 17);
+                //mandatoryConvo(3, 16, 17);
                 break;
         }
     }
@@ -263,7 +265,8 @@ public class day1Progress : MonoBehaviour
                     convo.convoNum += 1;
                     convo.destroy();
                     meal.mealcooked = false;
-                    book.bookread = true;
+                    //book.bookread = true;
+                    convo.convoDone = false;
                 }
             }
        }
@@ -277,16 +280,22 @@ public class day1Progress : MonoBehaviour
                 rest.sleepOrNot = false;
                 rest.mustSleep = false;
                 meal.hungry = false;
+                book.readable = false;
+                book.bookread = false;
             }
             else
             {
                 book.readable = true;
                  if (book.bookread == true)
-                    {book.bookread = false;
+                    {
+                    book.bookread = false;
                     convo.convoNum +=1;
-                    convo.destroy();}
+                    convo.destroy();
+                    convo.convoDone = false;
+                    book.readable = false;
+                    laptoptasks.abletowork = true;
+                }
             }
-
         }
 
         if (convo.convoNum == 2)
@@ -294,19 +303,44 @@ public class day1Progress : MonoBehaviour
             if (convo.convoDone == false)
             {
                 book.readable = false;
-                laptoptasks.abletowork = false;
                 rest.sleepOrNot = false;
                 rest.mustSleep = false;
                 meal.hungry = false;
             }
             else
             {
-                book.readable = true;
+                laptoptasks.abletowork = true;
                 if (book.bookread == true)
                 {
                     book.bookread = false;
                     convo.convoNum += 1;
                     convo.destroy();
+                    convo.convoDone = false;
+                    laptoptasks.abletowork = false;
+                }
+            }
+
+        }
+
+        if (convo.convoNum == 3)
+        {
+            if (convo.convoDone == false)
+            {
+                book.readable = false;
+                rest.sleepOrNot = false;
+                rest.mustSleep = false;
+                meal.hungry = false;
+            }
+            else
+            {
+                laptoptasks.abletowork = true;
+                if (book.bookread == true)
+                {
+                    book.bookread = false;
+                    convo.convoNum += 1;
+                    convo.destroy();
+                    convo.convoDone = false;
+                    laptoptasks.abletowork = true;
                 }
             }
 

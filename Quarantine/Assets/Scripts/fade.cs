@@ -24,6 +24,12 @@ public class fade : MonoBehaviour
         //StartCoroutine("WaitForSec");
     }
 
+    /*public void fadeinnOut()
+    {
+        StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 1));
+
+    }*/
+
     public IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float lerpTime = 1f)
     {
         float _timeStartedLerping = Time.time;
@@ -53,7 +59,6 @@ public class fade : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         FadeOut();
-        //break;
-        //.SetActive(false);
+        
     }
 }
