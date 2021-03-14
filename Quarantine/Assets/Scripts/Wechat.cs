@@ -116,7 +116,7 @@ public class Wechat : MonoBehaviour
                 innerworld.GetComponent<Text>().text = innerworldtext;
                 innerworld.SetActive(true);
                 StartCoroutine("WaitForSec");
-                //nvoNum += 1;  
+                //convoNum += 1;  
                 //destroy();
             }
         }

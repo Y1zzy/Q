@@ -6,6 +6,7 @@ public class book : MonoBehaviour
 {
     public timer time;
     public bool readable;
+    public bool bookread;
     public day1Progress day;
     public string kobe;
     //public string godfather;
@@ -25,7 +26,7 @@ public class book : MonoBehaviour
     {
         time.hoursread += 1;
         time.initialhr += 1;
-
+        bookread = true;
     }
 
     public void differentdaydifferentquote()

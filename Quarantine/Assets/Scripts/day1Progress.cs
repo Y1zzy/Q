@@ -59,13 +59,9 @@ public class day1Progress : MonoBehaviour
         
         if(chapter == 1)
         {
-           
             convoTracking();
         }
 
-
-        
-        
     }
 
     
@@ -118,8 +114,7 @@ public class day1Progress : MonoBehaviour
     {
         if(timeManager.hour > (sleepTime - 1) && timeManager.hour < (sleepTime + 5))
         {
-            
-            //set this into sleep
+
             rest.sleepOrNot = true;
             if (timeManager.hour >= (sleepTime + 1) && timeManager.hour < (sleepTime + 4))
             {
@@ -139,15 +134,10 @@ public class day1Progress : MonoBehaviour
 
     void mandatoryConvo(int convoNumber, int beginninghr, int endhr)
     {
-       
-        //Debug.Log(convo.convoNum);
         if (timeManager.hour >= beginninghr && timeManager.hour <= endhr)
         {
-           
             convo.convoNum = convoNumber;
         }
-
-
         else
         {
             if (convoNumber == convo.convoNum && convo.convoDone == true)
@@ -156,10 +146,8 @@ public class day1Progress : MonoBehaviour
                 convo.convoNum += 1;
                 Debug.Log("convoNum plused" + convo.convoNum);
             }
-
             else
             {
-
             }
             
         }
@@ -171,7 +159,6 @@ public class day1Progress : MonoBehaviour
         switch (convo.convoNum)
         {
             case 0:
-                
                 mandatoryConvo(0, 10, 11);
                 cN = "Ball is life";
                 chatname.GetComponent<Text>().text = cN;
@@ -226,7 +213,6 @@ public class day1Progress : MonoBehaviour
             case 3:
                 month = "Mar";
                 date = 9;
-
                 break;
             case 4:
                 month = "Mar";
@@ -252,5 +238,88 @@ public class day1Progress : MonoBehaviour
                 break;
         }
         calendar.text = string.Format(month + " . " + date + "th" + " 2020");
+    }
+
+    void day1()
+    {
+        if (convo.convoNum == 0)
+        {
+            if (convo.convoDone == false)
+            {
+                book.readable = false;
+                laptoptasks.abletowork = false;
+                rest.sleepOrNot = false;
+                rest.mustSleep = false;
+                meal.hungry = false;
+                meal.mealcooked = false;
+            }
+            else
+            {
+                meal.hungry = true;
+
+                if (meal.mealcooked == true)
+                {
+                    meal.hungry = false;
+                    convo.convoNum += 1;
+                    convo.destroy();
+                    meal.mealcooked = false;
+                    book.bookread = true;
+                }
+            }
+       }
+        
+       if (convo.convoNum == 1)
+        {
+            if (convo.convoDone == false)
+            {
+                book.readable = false;
+                laptoptasks.abletowork = false;
+                rest.sleepOrNot = false;
+                rest.mustSleep = false;
+                meal.hungry = false;
+            }
+            else
+            {
+                book.readable = true;
+                 if (book.bookread == true)
+                    {book.bookread = false;
+                    convo.convoNum +=1;
+                    convo.destroy();}
+            }
+
+        }
+
+        if (convo.convoNum == 2)
+        {
+            if (convo.convoDone == false)
+            {
+                book.readable = false;
+                laptoptasks.abletowork = false;
+                rest.sleepOrNot = false;
+                rest.mustSleep = false;
+                meal.hungry = false;
+            }
+            else
+            {
+                book.readable = true;
+                if (book.bookread == true)
+                {
+                    book.bookread = false;
+                    convo.convoNum += 1;
+                    convo.destroy();
+                }
+            }
+
+        }
+
+
+    }
+
+    IEnumerator innermindset()
+    {
+        yield return new WaitForSeconds(2);
+        //innerworld.SetActive(false);
+        //fading.FadeOut();
+        
     }
 }

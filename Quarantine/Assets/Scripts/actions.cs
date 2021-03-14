@@ -108,13 +108,17 @@ public class actions : MonoBehaviour
 
                 else
                 {
-                    Debug.Log("?");
+                    
                     book.readTime();
+                    book.differentdaydifferentquote();
+                    //Debug.Log("book" + book.kobe + "inner" + innerworldtext);
                     innerworldtext = book.kobe;
+                    
                     innerworld.GetComponent<Text>().text = innerworldtext;
                     innerworld.SetActive(true);
                     fading.FadeIn();
                     StartCoroutine("WaitForSec");
+                    Debug.Log("call another coroutine for innerworld text");
                 }
             }
         }
@@ -194,6 +198,7 @@ public class actions : MonoBehaviour
                     innerworld.GetComponent<Text>().text = innerworldtext;
                     innerworld.SetActive(true);
                     StartCoroutine("WaitForSec");
+
                 }
                 //onBedStatus.stop = true;
                 //goToBed();
@@ -336,7 +341,7 @@ public class actions : MonoBehaviour
 
         IEnumerator WaitForSec()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
             innerworld.SetActive(false);
             fading.FadeOut();
             //closing = false;

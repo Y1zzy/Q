@@ -35,7 +35,7 @@ public class timer : MonoBehaviour
     void Update()
     {
         startTime += Time.deltaTime;
-        Debug.Log(startTime);
+        //Debug.Log(startTime);
         second = (int)(startTime%60);
         minute = initialmin + (int)(startTime / 60)%60;
         hour = initialhr + (int)(startTime / 3600) % 24;
