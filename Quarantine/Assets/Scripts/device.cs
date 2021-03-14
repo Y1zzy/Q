@@ -5,6 +5,7 @@ using UnityEngine;
 public class device : MonoBehaviour
 {
     public GameObject phone;
+    public GameObject lockscreen;
     public GameObject chatOn;
     public GameObject chatOff;
     public GameObject message;
@@ -71,6 +72,7 @@ public class device : MonoBehaviour
         plannerOn.SetActive(false);
         newsIsOn = true;
         plannerPage.SetActive(false);
+        lockscreen.SetActive(false);
         if (chatIsOn == false)
         {
             chatOff.SetActive(true);
@@ -97,7 +99,7 @@ public class device : MonoBehaviour
         plannerOff.SetActive(true);
         plannerOn.SetActive(false);
         plannerPage.SetActive(false);
-
+        lockscreen.SetActive(false);
         if (newsIsOn == false)
         {
             newsOff.SetActive(true);
@@ -124,6 +126,7 @@ public class device : MonoBehaviour
         chatOff.SetActive(true);
         chatOn.SetActive(false);
         message.SetActive(false);
+        lockscreen.SetActive(false);
         //newsIsOn = true;
         if (plannerIsOn == false)
         {

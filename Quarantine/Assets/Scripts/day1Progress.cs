@@ -306,17 +306,19 @@ public class day1Progress : MonoBehaviour
                 rest.sleepOrNot = false;
                 rest.mustSleep = false;
                 meal.hungry = false;
+                laptoptasks.laptopworked = false;
+                laptoptasks.abletowork = false;
             }
             else
             {
                 laptoptasks.abletowork = true;
-                if (book.bookread == true)
+                if (laptoptasks.laptopworked == true)
                 {
-                    book.bookread = false;
+                    laptoptasks.laptopworked = false;
                     convo.convoNum += 1;
                     convo.destroy();
                     convo.convoDone = false;
-                    laptoptasks.abletowork = false;
+                    //laptoptasks.abletowork = false;
                 }
             }
 

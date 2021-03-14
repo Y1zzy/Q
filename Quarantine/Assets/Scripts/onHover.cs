@@ -50,7 +50,7 @@ public class onHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
         Time.initialhr += customizedHour;
         Time.hoursworked += customizedHour;
         Time.hoursrested -= customizedHour/2;
-        
+        screen.laptopworked = true;
         fading.FadeIn();    //you can't call coroutine in onpointerdown
         Debug.Log("? go through here");
         //donefading = false;

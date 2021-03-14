@@ -7,6 +7,7 @@ public class laptop : MonoBehaviour
     public GameObject screen;
     public bool laptopOpen;
     public bool abletowork;
+    public bool laptopworked; //only for specific conditions
     // Start is called before the first frame update
     void Start()
     {
